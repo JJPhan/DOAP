@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { login } from '../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import SessionForm from './SessionForm'
 
 const mSTP = (state, ownProps) => ({
     // Bbnb uses ( {errors} )
-    errors: errors.session,
+    errors: state.errors.session,
     formType: 'login'
 })
 

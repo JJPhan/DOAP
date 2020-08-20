@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    /* display: grid; */
+    /* grid-template-columns: repeat(10, minmax(0,1fr)); */
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 10px;
+    align-items: flex-end;
+    /* minmax: auto; */
+}
+
+.navbar-left {
+    font-size: 25px;
+    padding-left: 50px;
+}
+.navbar .navbar-right .navbar-list{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    font: gray;
+
+}
+
+.navbar-list li{
+    display: flex;
+    padding: 0px 20px 0px 20px;
+    color: gray;
+    /* flex-direction: row; */
+
+}
+
+.navbar-list li :hover {
+    color: black;
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+
+.discover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.magGlass{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    /* margin-right: 100px; */
+}
+
+.fa-search:hover {
+    color: yellow;
+}
