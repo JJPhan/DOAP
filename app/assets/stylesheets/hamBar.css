@@ -19,12 +19,24 @@
 .sidebar {
     position: absolute;
     right: -100%;
-    background: pink;
+    background: rgb(46, 68, 64);
     top: 0;
     bottom: 0;  
     width: 150px;
-    transition: right 1s ease-in-out;
-    z-index: 999
+    transition: right 0.5s ease-in-out;
+    z-index: 999;
+}
+
+.sidebar_items > * {
+    overflow: auto;
+    display: flex;
+    align-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    border-bottom: lightgray solid 2px;
+    border-radius: 5px;
+    padding: 10px;
+    
 }
 
 .sidebar-open {

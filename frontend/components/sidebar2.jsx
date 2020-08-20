@@ -1,17 +1,40 @@
 import React from 'react';
+import {clearErrors} from '../actions/session_actions'
 import {close_sidebar_action} from '../actions/navbar_actions'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-
+import {logout} from '../actions/session_actions'
 
 class Sidebar2 extends React.Component {
     constructor(props) {
         super(props)
         this.submit = this.submit.bind(this)
+        this.renderBottomSidebar = this.renderBottomSidebar.bind(this)
     }
+
     submit(){ 
         this.props.closeSide(false)
+    }
+
+    renderBottomSidebar() {
+        if (!this.props.currentUser) {   
+            return (
+                <div>
+                    <li><Link to='login'> Login </Link> </li>
+                    <li><Link to='/signup'> Sign Up </Link> </li>
+                </div>
+            ) 
+        } else {         
+            return (
+                <div>
+                    PLS BUY STUFF { this.props.currentUser }
+                    <Link to='/' >
+                        <button onClick={ this.props.logout }>  Logout    
+                        </button> 
+                    </Link>
+                </div>
+            )
+        }
     }
     
     render() {
@@ -21,7 +44,7 @@ class Sidebar2 extends React.Component {
             <div>
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}
                 <div className={"sidebar "+openShow} >
-                    <ul>
+                    <ul className="sidebar_items">
                         <li><div> Discover </div> </li> 
                         <li><div>Shop All</div></li>
                         <li><div>Brands</div></li>
@@ -30,8 +53,7 @@ class Sidebar2 extends React.Component {
                         <li><div>Wants</div></li>
                         <li><div>GREATEST</div></li>
                         <li><div>Account Preferences</div></li>
-                        <li><Link to='login'> Login </Link> </li>
-                        <li><Link to='/signup'> Sign Up </Link> </li>
+                        <li><ul>{this.renderBottomSidebar()}</ul></li>
                     </ul>
                 </div >
             </div>
@@ -40,11 +62,13 @@ class Sidebar2 extends React.Component {
 }
 
 const mSTP = (state) => ({
-    is_open: state.entities.navBar.isOpen
+    is_open: state.entities.navBar.isOpen,
+    currentUser: state.session.id
 })
 
 const mDTP = (dispatch) => ({
-    closeSide: (is_closed) => dispatch(close_sidebar_action(is_closed))
+    closeSide: (is_closed) => dispatch(close_sidebar_action(is_closed)),
+    logout: () => dispatch(logout()),
 })
 
 export default connect(mSTP, mDTP)(Sidebar2)

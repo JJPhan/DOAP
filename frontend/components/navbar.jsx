@@ -30,7 +30,6 @@ class Navbar extends React.Component {
                         <li>  
                             <div className="hamBar">
                                 <i class="fas fa-bars" onClick={this.submit} ></i>
-                                {/* <div className={show} id="overlay" /> */}
                             </div>  
                         </li>
                     </ul>

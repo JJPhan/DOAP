@@ -1,8 +1,13 @@
 .base_form {
     display: flex;
-    justify-content: center;
-    border: lightgray 1px solid;
+    justify-content: space-around;
+    align-items: center;
+    border: lightgray 2px solid;
+    margin: 80px;
     /* flex-direction: column; */
+    box-sizing: border-box;
+    font-family: Overpass, sans-serif
+    
 }
 
 .formtype {
@@ -11,4 +16,19 @@
 .form1 {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.form1 > * {
+    margin: 10px
+}
+
+.side_image {
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+    box-sizing: border-box;
+    width: 50%;
+    border-right: lightgrey solid 1px ;
 }
