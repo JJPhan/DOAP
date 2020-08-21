@@ -10,16 +10,20 @@
     position: fixed;
     width: 100%;
     background: white;
-    padding-top: 20px;
-    margin-left: 80px;
-    padding-right: 80px;
-    /* margin-right: 80px; */
-    padding-bottom: 50px;
-    border: 2px solid lightgrey;
-    border-top: none;
+    padding-top: 30px;
+    /* padding-right: 80px; */
+    padding-bottom: 30px;
+    border-bottom: 2px solid lightgrey;
+    /* border-top: none; */
     top: 0px;
     /* minmax: auto; */
 }
+
+/* .parent-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} */
 
 .navbar-left {
     font-size: 25px;

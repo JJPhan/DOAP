@@ -81,10 +81,12 @@ class SessionForm extends React.Component {
                         <input className="inputBox" type="text" value={this.state.email} onChange={this.update('email')}></input>
                         <label className="signInLabel" > Password </label>
                         <input className="inputBox" type="password" value={this.state.password} onChange={this.update('password')}></input>
-                        <input type="submit" ></input>
-                        <button onClick={this.handleDemo}> DEMO LOGIN </button>
                     </form>
                         { this.props.errors.map( (error, idx) => <li key={idx} >  {error}  </li>) } 
+                    <div>
+                        <input type="submit" ></input>
+                        <button onClick={this.handleDemo}> DEMO LOGIN </button>
+                    </div>
                 </div>
             </div>
         )

@@ -11,7 +11,9 @@ const App = () => {
     return (
             <div>
                 <Sidebar2 />
-                <Navbar />
+                <div className="parent-nav">
+                    <Navbar />
+                </div>
                 <Route path="/login" component={LoginFormContainer} />
                 <Route path="/signup" component={SignupFormContainer} />
             </div>
