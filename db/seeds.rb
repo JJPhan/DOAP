@@ -9,4 +9,4 @@
 
 User.destroy_all 
 
-# demo = User.create(email: "heracross1@gmail.com", password: "pikachu")
+demo = User.create(email: "heracross1@gmail.com", password: "pikachu")

@@ -27,7 +27,7 @@ class Sidebar2 extends React.Component {
         } else {         
             return (
                 <div>
-                    PLS BUY STUFF { this.props.currentUser }
+                    p1z bUy sh00z D: { this.props.currentUser }
                     <Link to='/' >
                         <div>
                             <button onClick={ this.props.logout }>  Logout </button> 

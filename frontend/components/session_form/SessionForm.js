@@ -21,42 +21,44 @@ class SessionForm extends React.Component {
 
     handleDemo(e) {
         e.preventDefault();
-        // console.log(this.props)
         
-        const demoUser = { email: "heracross1@gmail.com", password: "pikachu" }
-        // const loginDemo = () => { this.props.login(demoUser)
+            const demoUser = { email: "heracross1@gmail.com", password: "pikachu" }
+        // this.props.login(demoUser)
         //     .then(() => this.props.history.push('/'))
-        // }
-
-        let { email, password } = demoUser;
-        let interval = 150;
-        let login = () => {
-            this.props.processForm(this.state);
-            this.props.history.push("/")
-        };
-        if (this.state.email !== email) {
-            let inputEmail = setInterval(() => {
-                if (this.state.email !== email) {
-                    let tempEmail = email.slice(0, this.state.email.length + 1);
-                    this.setState({ email: tempEmail });
-                } else {
-                    clearInterval(inputEmail);
-                    fillPassword();
-                }
-            }, interval);
+        
+       
+         
+            let { email, password } = demoUser;
+            let interval = 150;
+            let login = () => {
+                this.props.processForm(this.state);
+                this.props.history.push("/")
+            };
+            if (this.state.email !== email) {
+                let inputEmail = setInterval(() => {
+                    if (this.state.email !== email) {
+                        let tempEmail = email.slice(0, this.state.email.length + 1);
+                        this.setState({ email: tempEmail });
+                    } else {
+                        clearInterval(inputEmail);
+                        fillPassword();
+                    }
+                }, interval);
+            }
+            let fillPassword = () => {
+                let inputPassword = setInterval(() => {
+                    if (this.state.password !== password) {
+                        let tempPassword = password.slice(0, this.state.password.length + 1);
+                        this.setState({ password: tempPassword });
+                    } else {
+                        clearInterval(inputPassword);
+                        login();
+                    }
+                }, interval);
+            };
         }
 
-        let fillPassword = () => {
-            let inputPassword = setInterval(() => {
-                if (this.state.password !== password) {
-                    let tempPassword = password.slice(0, this.state.password.length + 1);
-                    this.setState({ password: tempPassword });
-                } else {
-                    clearInterval(inputPassword);
-                }
-            }, interval, login());
-        };        
-    }
+
 
     componentWillUnmount() {
         this.props.clearErrors();
