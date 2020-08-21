@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                         <i className="fas fa-search"></i>
                         <li>  
                             <div className="hamBar">
-                                <i class="fas fa-bars" onClick={this.submit} ></i>
+                                <i className="fas fa-bars" onClick={this.submit} ></i>
                             </div>  
                         </li>
                     </ul>

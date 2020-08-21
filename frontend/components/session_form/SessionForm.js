@@ -22,12 +22,14 @@ class SessionForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         // console.log(this.props)
-        let demoUser = { email: "heracross@gmail.com", password: "password" }
-        this.props.login(demoUser)
-           .then(() => this.props.history.push('/'))
+        
+        const demoUser = { email: "heracross1@gmail.com", password: "pikachu" }
+        // const loginDemo = () => { this.props.login(demoUser)
+        //     .then(() => this.props.history.push('/'))
+        // }
 
         let { email, password } = demoUser;
-        let interval = 50;
+        let interval = 150;
         let login = () => {
             this.props.processForm(this.state);
             this.props.history.push("/")
@@ -51,9 +53,8 @@ class SessionForm extends React.Component {
                     this.setState({ password: tempPassword });
                 } else {
                     clearInterval(inputPassword);
-                    login();
                 }
-            }, interval);
+            }, interval, login());
         };        
     }
 
@@ -69,26 +70,21 @@ class SessionForm extends React.Component {
 
     render() {
         return(
-            <span class="base_form">
-                <img class="side_image" src="https://image.goat.com/1000/attachments/product_template_pictures/images/011/867/273/original/312607_00.png.png" /> 
-                <div>
-
-                    <form class="form1" onSubmit={this.handleSubmit}>
-                        <h1 class="formtype">{this.props.formType}</h1>
-                        <label>Email</label>
-                            <input type="text" value={this.state.email} onChange={this.update('email')}></input>
-                        <label>Password
-                        </label>
-                            <input type="password" value={this.state.password} onChange={this.update('password')}></input>
+            <div className="base_form">
+                <img className="side_image" src="https://image.goat.com/1000/attachments/product_template_pictures/images/011/867/273/original/312607_00.png.png" /> 
+                <div className="signInBox-Right">
+                    <form className="form1" onSubmit={this.handleSubmit}>
+                        <h1 className="formtype">{this.props.formType}</h1>
+                        <label className="signInLabel" > Email </label>
+                        <input className="inputBox" type="text" value={this.state.email} onChange={this.update('email')}></input>
+                        <label className="signInLabel" > Password </label>
+                        <input className="inputBox" type="password" value={this.state.password} onChange={this.update('password')}></input>
                         <input type="submit" ></input>
+                        <button onClick={this.handleDemo}> DEMO LOGIN </button>
                     </form>
-
-                    <div>
                         { this.props.errors.map( (error, idx) => <li key={idx} >  {error}  </li>) } 
-                    </div>
                 </div>
-                <button onClick={this.handleDemo}> DEMO LOGIN </button>
-            </span>
+            </div>
         )
     }
 }

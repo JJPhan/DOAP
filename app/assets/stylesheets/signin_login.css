@@ -6,23 +6,37 @@
     margin: 80px;
     /* flex-direction: column; */
     box-sizing: border-box;
-    font-family: Overpass, sans-serif
-    
+    font-family: Overpass, sans-serif;
+    height: auto
 }
 
 .formtype {
-    padding: 3
+    /* padding-top: 3; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 100px */
+    /* font- */
 }
+
 .form1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
 
 }
 
 .form1 > * {
-    margin: 10px
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    /* width: 100% */
+    margin: 10px 0px 10px 0px;
 }
+
 
 .side_image {
     display: flex;
@@ -31,4 +45,24 @@
     box-sizing: border-box;
     width: 50%;
     border-right: lightgrey solid 1px ;
+}
+
+.inputBox {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid lightgrey;
+    margin: 5px;
+    border-radius: 2px;
+    width: 80%;
+}
+
+.signInLabel {
+    color: lightgray;
+    font-size: 15px;
+    /* font-weight: 900px; */
+}
+
+.signInBox-Right {
+    width: 100%;
+    height: 100%;
 }

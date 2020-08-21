@@ -19,9 +19,9 @@ class Sidebar2 extends React.Component {
     renderBottomSidebar() {
         if (!this.props.currentUser) {   
             return (
-                <div>
-                    <li><Link to='login'> Login </Link> </li>
-                    <li><Link to='/signup'> Sign Up </Link> </li>
+                <div className="signInLinks">
+                    <Link className="loginBut" to='login'> Login </Link> 
+                    <Link to='/signup'> Sign Up </Link>
                 </div>
             ) 
         } else {         
@@ -29,8 +29,9 @@ class Sidebar2 extends React.Component {
                 <div>
                     PLS BUY STUFF { this.props.currentUser }
                     <Link to='/' >
-                        <button onClick={ this.props.logout }>  Logout    
-                        </button> 
+                        <div>
+                            <button onClick={ this.props.logout }>  Logout </button> 
+                        </div>
                     </Link>
                 </div>
             )

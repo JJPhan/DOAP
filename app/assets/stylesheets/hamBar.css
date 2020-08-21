@@ -1,6 +1,6 @@
 .show {
     right: 0%;
-    background-color: pink; 
+    background-color: yellow; 
     height: 100px;
     width: 100px;
     position: absolute;    
@@ -12,17 +12,17 @@
   top: 0;
   bottom: 0;
   /* right: 10% */
-  background: pink;
+  background: none;
   transition: right 3s linear;
 }
 
 .sidebar {
     position: absolute;
     right: -100%;
-    background: rgb(46, 68, 64);
+    background: whitesmoke;
     top: 0;
     bottom: 0;  
-    width: 150px;
+    width: 300px;
     transition: right 0.5s ease-in-out;
     z-index: 999;
 }
@@ -34,17 +34,28 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     border-bottom: lightgray solid 2px;
-    border-radius: 5px;
-    padding: 10px;
-    
+    padding: 20px;
+    font-size: 14px;
 }
 
 .sidebar-open {
     right: 0%!important;
 }
 
+.signInLinks  {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between; 
+    width: 150px;
+}
 
-
+.loginBut {
+    padding-right: 35px;
+    border-right: 2px solid lightgray;
+}
+/* .signInLinks > * {
+    display: flex;
+} */
 
 .overlay {
     position: absolute;
@@ -52,7 +63,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(243, 85, 85, 0.5);
+    background: rgba(68, 88, 69, 0.5);
 } 
 
 

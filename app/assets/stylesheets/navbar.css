@@ -6,8 +6,17 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     box-sizing: border-box;
-    margin: 10px;
     align-items: flex-end;
+    position: fixed;
+    width: 100%;
+    background: white;
+    padding-top: 20px;
+    margin-left: 80px;
+    padding-right: 80px;
+    /* margin-right: 80px; */
+    padding-bottom: 50px;
+    border: 2px solid lightgrey;
+    top: 0px;
     /* minmax: auto; */
 }
 
@@ -15,6 +24,11 @@
     font-size: 25px;
     padding-left: 50px;
 }
+
+.navbar-right {
+    padding-right: 80px;
+}
+
 .navbar .navbar-right .navbar-list{
     display: flex;
     flex-direction: row;
