@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
             <div className="base_form">
                 <img className="side_image" src="https://image.goat.com/1000/attachments/product_template_pictures/images/011/867/273/original/312607_00.png.png" /> 
                 <div className="signInBox-Right">
-                    <form className="form1" onSubmit={this.handleSubmit}>
+                    <form id="form1" onSubmit={this.handleSubmit}>
                         <h1 className="formtype"> 
                             <div className="formtype-label">
                                 { this.props.formType === "login" ? "Log In" : "Sign Up"}
@@ -91,8 +91,8 @@ class SessionForm extends React.Component {
                         <input className="inputBox" type="text" value={this.state.email} onChange={this.update('email')}></input>
                         <label className="signInLabel" > Password </label>
                         <input className="inputBox" type="password" value={this.state.password} onChange={this.update('password')}></input>
-                    </form>
                         { this.props.errors.map( (error, idx) => <li key={idx} >  {error}  </li>) } 
+                    </form>
                     <div className="session-buttons">
                         <input className="submit-button" form="form1" type="submit" value={`${this.props.formType === "login" ? "Log In" : "Sign Up"}`}></input>
                         <button className="demo-button" onClick={this.handleDemo}> DEMO LOGIN </button>

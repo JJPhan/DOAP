@@ -23,18 +23,18 @@
     /* font- */
 }
 
-.form1 {
+#form1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     /* height: 100%; */
     /* width: 100%; */
-    padding: 0px 10px 0px 10px;
-    margin: 80px 0px 80px 0px;
-
+    padding: 10px 10px 0px 10px;
+    /* margin: 80px 0px 0px 0px; */
+    height: 90%;
 }
 
-.form1 > * {
+#form1 > * {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -76,8 +76,9 @@
 }
 
 .login-text1 {
-    color: lightgray;
+    color: gray;
     font-size: 12px;
+    font-weight: 400;
 } 
 
 .redirect-signin {
@@ -95,17 +96,17 @@
 .session-buttons {
     display: flex;
     /* align-items: flex-end; */
-    margin-top: 401px;
+    /* margin-top: 401px; */
     bottom: 0;
     border: 1px solid lightgray;
     border-top: 2px soliday lightgray;
-
+    height: 10%;
 }
 
 .submit-button {
     /* border: 1px solid lightgray; */
     width: 50%;
-    height: 50px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +116,7 @@
     /* border: 1px solid lightgray; */
     border-left: 1px solid lightgray;
     width: 50%;
-    height: 50px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;

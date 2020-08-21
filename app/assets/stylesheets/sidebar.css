@@ -6,19 +6,20 @@
     position: absolute;    
 } */
 
-.hamBar {
+/* .hamBar {
   width: 10%;
   position: absolute;
   top: 0;
   bottom: 0;
   /* right: 10% */
-  background: none;
-  transition: right 3s linear;
-}
+  /* background: none;
+  transition: right 3s linear; */
+ 
 
 .sidebar {
     position: absolute;
     right: -100%;
+    height: 100%;
     background: whitesmoke;
     top: 0;
     bottom: 0;  
@@ -67,8 +68,6 @@
 } 
 
 
-
-
-
-
-
+/* .overall-sidebar {
+    height: 100%;
+} */
