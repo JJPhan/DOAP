@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.login = something.login;
     // window.logout = something.logout;
     
-    
+    //bootstrapping current user
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }    
     
     window.getState = store.getState;
-    
+
     // const store = configureStore();
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root )
