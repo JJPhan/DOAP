@@ -10,6 +10,12 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDemo = this.handleDemo.bind(this)
+        // this.submit = this.submit.bind(this)
+
+    }
+
+    componentDidMount(){
+        this.props.closeSide(false)
     }
 
     handleSubmit(e) {
@@ -82,10 +88,14 @@ class SessionForm extends React.Component {
                             </div>
                             <div className="login-text1">
                                 { this.props.formType === "login" && "You need to be logged in to continue"} 
+                            <Link to='/login' className="redirect-signin">
+                                {this.props.formType === "signup" && "Already have an Account?"}
+                            </Link>
                             </div>
                             <Link to='/signup' className="redirect-signin">
                                 {this.props.formType === "login" && "Don't have an Account?"}
                             </Link>
+
                         </h1>
                         <label className="signInLabel" > Email </label>
                         <input className="inputBox" type="text" value={this.state.email} onChange={this.update('email')}></input>

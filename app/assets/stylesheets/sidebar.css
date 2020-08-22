@@ -15,6 +15,9 @@
   /* background: none;
   transition: right 3s linear; */
  
+.hamBar:hover {
+ cursor: pointer;
+}
 
 .sidebar {
     position: absolute;
@@ -32,7 +35,7 @@
     overflow: auto;
     display: flex;
     align-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 10px;
     border-bottom: lightgray solid 2px;
     padding: 20px;

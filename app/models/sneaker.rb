@@ -15,4 +15,14 @@
 #  updated_at   :datetime         not null
 #
 class Sneaker < ApplicationRecord
+
+    validates :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category. presence: true
+
+
+    ## should be already in database?
+    ## can not create/delete 
+
+    def self.find_by_name(name)
+        Sneaker.where(name: name)
+    end
 end
