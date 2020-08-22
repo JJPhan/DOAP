@@ -16,13 +16,11 @@
 #
 class Sneaker < ApplicationRecord
 
-    validates :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category. presence: true
+    validates :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category, presence: true
 
-
-    ## should be already in database?
-    ## can not create/delete 
-
-    def self.find_by_name(name)
-        Sneaker.where(name: name)
-    end
+    has_many :listings,
+        foreign_key: :artist_id,
+        class_name: :Listing
+    
+    
 end
