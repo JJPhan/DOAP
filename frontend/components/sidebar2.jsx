@@ -46,14 +46,22 @@ class Sidebar2 extends React.Component {
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}
                 <div className={"sidebar "+openShow} >
                     <ul className="sidebar_items">
-                        <li><div> Discover </div> </li> 
-                        <li><div>Shop All</div></li>
+                        <li><div><Link to='/' onClick={this.submit}> Discover </Link></div> </li> 
+                        <li><div><Link to='/sneakers' onClick={this.submit} > Shop All </Link></div></li>
                         <li><div>Brands</div></li>
                         <li><div>Collections</div></li>
                         <li><div>Styles</div></li>
-                        <li><div>Wants</div></li>
-                        <li><div>GREATEST</div></li>
                         <li><div>Account Preferences</div></li>
+                        <li>
+                            <a href="https://github.com/JJPhan">
+                                <i className="fab fa-github"></i> GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jordan-phan-835919106/">
+                                <i className="fab fa-linkedin"></i> LinkedIn                      
+                            </a>
+                        </li>
                         <li><ul>{this.renderBottomSidebar()}</ul></li>
                     </ul>
                 </div >

@@ -1,0 +1,35 @@
+.snkr-idx {
+    display: flex;
+    /* justify-content: flex-start; */
+    margin: 90px 80px 80px 80px;
+    padding-top: 80px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    height: 100%;
+    /* box-sizing: border-box; */
+    /* width:  */
+}
+
+.snkr-idx-itm {
+    display: flex;
+    flex-flow: wrap row;
+    height: 300px;
+    width: 250px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.snkr-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 25%; */
+    width: 60%;
+}
+
+.snkr-idx-pro {
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}

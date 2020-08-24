@@ -24,7 +24,7 @@ class Navbar extends React.Component {
                 <span className="navbar-right">
                     <ul className="navbar-list">
                         <li><Link className="discover" to='/'> Discover </Link> </li>
-                        <li><Link className="shopAll" to='/'> Shop All </Link></li>
+                        <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
                         <li><Link className="styles" to='/'> Styles </Link></li>
                         <i className="fas fa-search"></i>
                         <li>  
