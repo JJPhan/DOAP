@@ -1,7 +1,7 @@
 import { RECEIVE_SNEAKERS, RECEIVE_SNEAKER} from '../actions/sneaker_actions'
 
 
-const SneakersReducer = (state = {}. action) => {
+const SneakersReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign(state, {})
 
@@ -11,7 +11,7 @@ const SneakersReducer = (state = {}. action) => {
         case RECEIVE_SNEAKER:
             return nextState[action.sneaker.id] = action.sneaker
         default:
-            state
+            return state
     }
 }
 
