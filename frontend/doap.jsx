@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import * as something from './util/session_api_util'
+import * as sneakers from './util/sneaker_api_util'
+import * as listings from './util/listing_api_util'
 import configureStore from './store/store'
-// import * as something from './actions/session_actions'
+
 import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.login = something.login
     // window.logout = something.logout
     
+    window.fetchSneaker = sneakers.fetchSneaker
+    window.fetchSneakers = sneakers.fetchSneakers
+    window.fetchListings = listings.fetchListings
+    window.fetchListing = listings.fetchListing
     
     // store 
     // window.signup = signup;

@@ -1,7 +1,6 @@
 class Listing < ApplicationRecord
 
-    validation :sneaker_id, :size, :price, presence: true
-    validateion :sneaker_id, unqueness: true
+    validates :sneaker_id, :size, :price, presence: true
     
     belongs_to :sneaker,
         foreign_key: :sneaker_id,

@@ -10,22 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_035344) do
+ActiveRecord::Schema.define(version: 2020_08_23_222058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
   create_table "listings", force: :cascade do |t|
-    t.integer "sneaker_id", null: false
     t.float "size", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sneaker_id"], name: "index_listings_on_sneaker_id", unique: true
+    t.integer "sneaker_id", null: false
+    t.index ["sneaker_id"], name: "index_listings_on_sneaker_id"
   end
 
   create_table "sneakers", force: :cascade do |t|
-    t.string "name", null: false
     t.text "description", null: false
     t.date "release_date", null: false
     t.string "sku", null: false
@@ -35,9 +55,10 @@ ActiveRecord::Schema.define(version: 2020_08_22_035344) do
     t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
     t.index ["brand"], name: "index_sneakers_on_brand"
     t.index ["category"], name: "index_sneakers_on_category"
-    t.index ["name"], name: "index_sneakers_on_name", unique: true
+    t.index ["name"], name: "index_sneakers_on_name"
     t.index ["silhouette"], name: "index_sneakers_on_silhouette"
     t.index ["sku"], name: "index_sneakers_on_sku", unique: true
   end
@@ -52,4 +73,5 @@ ActiveRecord::Schema.define(version: 2020_08_22_035344) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

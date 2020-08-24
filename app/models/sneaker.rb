@@ -17,10 +17,12 @@
 class Sneaker < ApplicationRecord
 
     validates :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category, presence: true
+    validates :sku, uniqueness: true
 
     has_many :listings,
-        foreign_key: :artist_id,
+        foreign_key: :sneaker_id,
         class_name: :Listing
     
+    has_many_attached :photo
     
 end

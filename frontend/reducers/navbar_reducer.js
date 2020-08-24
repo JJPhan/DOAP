@@ -5,7 +5,7 @@ const navBar_reducer = (state = {isOpen: false} , action ) => {
         case IS_OPEN:
             return { isOpen: action.is_open }
         case IS_CLOSED:
-            return { isOpen: action.is_closed}
+            return { isOpen: action.is_closed }
         default:
             return state
     }
