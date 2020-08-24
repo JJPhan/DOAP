@@ -8,8 +8,8 @@ const SneakerIndexItem = (props) => {
     const {sneaker} = props
 
     return (
-        <Link to={`/sneakers/${sneaker.id}` }> 
-            <div className="snkr-idx-itm" >
+        <Link to={`/sneakers/${sneaker.id}`} className="snkr-idx-itm"> 
+            {/* <div className="snkr-idx-itm" > */}
                 <li> 
                     <img className="snkr-img" src={`${sneaker.photoUrls[0]}`} />
                     <div className="snkr-idx-prop">
@@ -18,7 +18,7 @@ const SneakerIndexItem = (props) => {
                     </div>
                     
                 </li>
-            </div>
+            {/* </div> */}
         </Link>
     )
 }

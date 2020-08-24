@@ -16,8 +16,8 @@ class SneakerIndex extends React.Component {
     render() {
         const {sneakers, requestSneaker} = this.props
         return (
-            <div className="snkr-idx">
-                <ul>
+            <div>
+                <ul className="snkr-idx">
                     {sneakers.map(sneaker => 
                                 <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> )}
 

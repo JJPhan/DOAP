@@ -1,6 +1,7 @@
 .snkr-idx {
     display: flex;
-    /* justify-content: flex-start; */
+    justify-content: flex-start;
+    flex-flow: wrap row;
     margin: 90px 80px 80px 80px;
     padding-top: 80px;
     border-left: 2px solid black;
@@ -12,10 +13,10 @@
 
 .snkr-idx-itm {
     display: flex;
-    flex-flow: wrap row;
+    /* flex-flow: wrap row; */
     height: 300px;
     width: 250px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     justify-content: center;
     align-items: center;
 }
@@ -32,4 +33,9 @@
     display: flex;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.snkr-idx-itm:hover {
+    border-color: black;
+    cursor: pointer;
 }

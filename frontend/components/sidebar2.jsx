@@ -51,7 +51,7 @@ class Sidebar2 extends React.Component {
                         <li><div>Brands</div></li>
                         <li><div>Collections</div></li>
                         <li><div>Styles</div></li>
-                        <li><div>Account Preferences</div></li>
+                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> !!! DONT CLICK !!!  </a></div></li>
                         <li>
                             <a href="https://github.com/JJPhan">
                                 <i className="fab fa-github"></i> GitHub
