@@ -18,8 +18,8 @@ const App = () => {
                     <Sidebar2 />
                 </div>
                     <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
-                    <Route path="/login" component={LoginFormContainer} />
-                    <Route path="/signup" component={SignupFormContainer} />
+                    <Route exact path="/login" component={LoginFormContainer} />
+                    <Route exact path="/signup" component={SignupFormContainer} />
             </div>
     )
 }

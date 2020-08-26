@@ -20,7 +20,7 @@ class Sidebar2 extends React.Component {
         if (!this.props.currentUser) {   
             return (
                 <div className="signInLinks">
-                    <Link className="loginBut" to='login'> Login </Link> 
+                    <Link className="loginBut" to='/login'> Login </Link> 
                     <Link to='/signup'> Sign Up </Link>
                 </div>
             ) 

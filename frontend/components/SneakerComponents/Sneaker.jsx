@@ -31,8 +31,15 @@ class SneakerComponent extends React.Component {
                         <div> {`${sneaker.sku}`}  </div>
                     </div>
                 </div>
+
                 <div className="sneaker-desc">
-                    {`${sneaker.description}`}
+                    <h1> DETAILS <i class="fas fa-chevron-down"></i>  </h1>
+                    <h1> {`${sneaker.name}`} </h1>
+                    <p> {`${sneaker.description}`}</p>
+                </div>
+
+                <div >
+
                 </div>
 
             </div>
