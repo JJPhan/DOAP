@@ -4,20 +4,22 @@ import LoginFormContainer from './session_form/LoginFormContainer'
 import SignupFormContainer from './session_form/SignupFormContainer'
 import Navbar from './navbar'
 import Sidebar2 from './sidebar2'
-import SneakerIndex from './SneakerComponents/SneakerIndex'
+import SneakerIndexContainer from './SneakerComponents/SneakerIndex'
+import SneakerComponent from '../components/SneakerComponents/Sneaker'
 // import AuthRoute from '../util/route_util'
-// import HamModule from './hamModule/hamModule'
 
 const App = () => {
     return (
             <div>
-                <Sidebar2 />
-                <div className="parent-nav">
+                <div className="main-content">
                     <Navbar />
+                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
+                    
+                    <Sidebar2 />
                 </div>
-                    <Route path="/sneakers" component={SneakerIndex} /> 
-                <Route path="/login" component={LoginFormContainer} />
-                <Route path="/signup" component={SignupFormContainer} />
+                    <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
+                    <Route path="/login" component={LoginFormContainer} />
+                    <Route path="/signup" component={SignupFormContainer} />
             </div>
     )
 }

@@ -1,6 +1,8 @@
-json.sneaker do 
+# json.sneaker do 
     json.extract! @sneaker, :id, :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category
-end
+    json.photoUrls @sneaker.photo.map { |file| url_for(file) }
+
+# end
 
 # json.listings do
 #     @sneaker.listings.each do |listing|
@@ -11,4 +13,7 @@ end
 #         end
 #     end
 # end
+
+
+
 

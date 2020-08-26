@@ -1,41 +1,102 @@
+
+
+.index-header {
+    font-size: 32px;
+    font-family: Arial;
+    padding: 200px 0 125px 0 ;
+    text-align: center;
+
+}
+
+.test-header {
+    padding: 500px;
+}
+
+
 .snkr-idx {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-flow: wrap row;
-    margin: 90px 80px 80px 80px;
+    margin: 90px 40px 80px 80px;
+    padding-right: 40px;
+    padding-left: 40px;
     padding-top: 80px;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    padding-bottom: 80px;
+    /* padding-top: 80px; */
+    /* border: 2px solid black; */
+    border-color: black;
+    border: 2px solid black;
     height: 100%;
+    margin: auto;
+    width: 66%;
     /* box-sizing: border-box; */
     /* width:  */
 }
 
 .snkr-idx-itm {
     display: flex;
+    /* margin-right: 10px; */
     /* flex-flow: wrap row; */
-    height: 300px;
-    width: 250px;
+    height: 350px;
+    width: 300px;
     border: 1px solid lightgray;
     justify-content: center;
     align-items: center;
+    /* margin: auto; */
 }
 
 .snkr-img {
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 55px;
     /* height: 25%; */
-    width: 60%;
+    width: 65%;
 }
 
-.snkr-idx-pro {
+.snkr-idx-prop {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.snkr-idx-prop > * {
+    padding: 5px;
+}
+
 .snkr-idx-itm:hover {
-    border-color: black;
+    border: 1px solid black;
     cursor: pointer;
 }
+
+
+
+.sneaker-show-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid lightgray;
+    margin: 80px;
+    box-sizing: border-box;
+    font-family: Overpass, sans-serif;
+    height: 800px;
+}
+
+.sneaker-show-left {
+    width: 50%;
+}
+
+.sneaker-show-img {
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+    width: 50%;
+    /* padding-bottom: 50px; */
+}
+
+.
+
+
+

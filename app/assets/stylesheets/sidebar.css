@@ -21,7 +21,7 @@
 
 .sidebar {
     position: absolute;
-    right: -100%;
+    right: -200%;
     height: 100%;
     background: whitesmoke;
     top: 0;

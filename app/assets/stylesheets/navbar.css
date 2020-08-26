@@ -1,7 +1,11 @@
+.main-content {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+}
+
+
+
 .navbar {
     display: flex;
-    /* display: grid; */
-    /* grid-template-columns: repeat(10, minmax(0,1fr)); */
     justify-content: space-between;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
@@ -11,19 +15,10 @@
     width: 100%;
     background: white;
     padding-top: 30px;
-    /* padding-right: 80px; */
     padding-bottom: 30px;
     border-bottom: 2px solid lightgrey;
-    /* border-top: none; */
     top: 0px;
-    /* minmax: auto; */
 }
-
-/* .parent-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-} */
 
 .navbar-left {
     font-size: 25px;

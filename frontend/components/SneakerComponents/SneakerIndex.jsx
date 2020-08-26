@@ -10,6 +10,7 @@ class SneakerIndex extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.requestSneakers()
     }
 
@@ -17,9 +18,10 @@ class SneakerIndex extends React.Component {
         const {sneakers, requestSneaker} = this.props
         return (
             <div>
+                <div className="index-header"> Shop All </div>
                 <ul className="snkr-idx">
                     {sneakers.map(sneaker => 
-                                <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> )}
+                    <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> )}
 
                 </ul>
             </div>
