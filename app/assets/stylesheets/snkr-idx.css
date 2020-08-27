@@ -28,7 +28,7 @@
     border: 2px solid black;
     height: 100%;
     margin: auto;
-    width: 66%;
+    width: 80%;
     /* box-sizing: border-box; */
     /* width:  */
 }
@@ -77,10 +77,10 @@
     justify-content: space-around;
     align-items: center;
     border: 2px solid lightgray;
-    margin: 80px 80px 40px 80px;
+    margin: 160px 80px 40px 80px;
     box-sizing: border-box;
     font-family: Overpass, sans-serif;
-    height: 800px;
+    height: 700px;
 }
 
 .sneaker-show-left {
@@ -93,11 +93,11 @@
 }
 
 .sneaker-show-img {
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex; */
+    /* justify-content: flex-end; */
     align-items: center;
     height: auto;
-    width: 50%;
+    width: 80%;
     padding-bottom: 50px;
 }
 
@@ -105,8 +105,13 @@
     font-size: 12px;
     color: gray;
     padding-top: 80px;
-
 }
+
+.sneaker-img-container {
+    overflow: auto;
+    height: 400px;
+}
+
 
 .sneaker-desc {
     display: flex;
@@ -136,9 +141,48 @@
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-
+/* 
 .sneaker-show-right {
     /* display: flex; */
     /* text-align: center; */
     /* font-size: 32px; */
+/* } */
+
+
+.product-details {
+    padding-top: 100px;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.product-details > * {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px 320px 0px 320px;
+
+}
+
+.product-details > :last-child {
+    border-bottom: 2px solid black
+}
+
+.main-content {
+    margin-right: 80px;
+    margin-left: 80px;
+    border-left: 1px solid black;
+    border-right: 1px solid black; 
+    overflow: auto;
+    /* width: 80%; */
+}
+
+
+.listing-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 5px;
+    
 }

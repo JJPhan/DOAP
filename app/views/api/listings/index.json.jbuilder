@@ -5,3 +5,18 @@
         json.price listing.price
     end
 end
+
+
+# {
+#     id: {
+#         sneaker.id 
+#         size
+#         price
+#     }
+
+#     id: {
+#         sneaker.id
+#         size
+#         price
+#     }
+# }

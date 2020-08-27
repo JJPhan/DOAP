@@ -1,9 +1,17 @@
-export const fetchListings = (listing) => (
+// export const fetchListings = () => (
+//     $.ajax({
+//         method: "GET",
+//         url: `/api/sneakers/${listing.sneaker_id}/listings/`
+//     })
+// )
+
+export const fetchListings = (sneakerId) => (
     $.ajax({
         method: "GET",
-        url: `/api/sneakers/${listing.sneaker_id}/listings/`
+        url: `/api/sneakers/${sneakerId}/listings`
     })
 )
+
 
 export const fetchListing = (listingId) => (
     $.ajax({

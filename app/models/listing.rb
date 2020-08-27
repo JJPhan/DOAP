@@ -6,6 +6,6 @@ class Listing < ApplicationRecord
         foreign_key: :sneaker_id,
         class_name: :Sneaker
 
-
+    
 
 end

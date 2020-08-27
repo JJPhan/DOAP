@@ -10,8 +10,8 @@ import SneakerComponent from '../components/SneakerComponents/Sneaker'
 
 const App = () => {
     return (
-            <div>
-                <div className="main-content">
+            <div className="main-content">
+                <div>
                     <Navbar />
                     <Route exact path="/sneakers" component={SneakerIndexContainer} />
                     
@@ -20,6 +20,10 @@ const App = () => {
                     <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
                     <Route exact path="/login" component={LoginFormContainer} />
                     <Route exact path="/signup" component={SignupFormContainer} />
+                    {/* <Route exact path="/categroy/:category" component={`${sneaker.category}Component`} /> */}
+                <footer>
+                    <div className="footer"></div>
+                </footer>
             </div>
     )
 }

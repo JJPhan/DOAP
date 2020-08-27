@@ -79,15 +79,21 @@ class SessionForm extends React.Component {
                 <div className="signInBox-Right">
                     <form id="form1" onSubmit={this.handleSubmit}>
                         <h1 className="formtype"> 
+                        
                             <div className="formtype-label">
                                 { this.props.formType === "login" ? "Log In" : "Sign Up"}
                             </div>
+
                             <div className="login-text1">
                                 { this.props.formType === "login" && "You need to be logged in to continue"} 
+                            
                             <Link to='/login' className="redirect-signin">
                                 {this.props.formType === "signup" && "Already have an Account?"}
                             </Link>
+
                             </div>
+
+
                             <Link to='/signup' className="redirect-signin">
                                 {this.props.formType === "login" && "Don't have an Account?"}
                             </Link>

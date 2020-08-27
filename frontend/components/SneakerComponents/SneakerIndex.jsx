@@ -9,6 +9,9 @@ class SneakerIndex extends React.Component {
         super(props)
     }
 
+// why do we do component did mount again...?
+// so we update the state then have access to to 'sneakers'
+
     componentDidMount() {
         // debugger
         this.props.requestSneakers()
@@ -16,6 +19,7 @@ class SneakerIndex extends React.Component {
 
     render() {
         const {sneakers, requestSneaker} = this.props
+        // const nikeCate = snakers.filter(nikes => (sneakers.category === "nike"))
         return (
             <div>
                 <div className="index-header"> Shop All </div>
@@ -33,7 +37,7 @@ class SneakerIndex extends React.Component {
 
 
 const mSTP = state => ({
-    sneakers: Object.values(state.entities.sneakers)
+    sneakers: Object.values(state.entities.sneakers) 
 })
 
 const mDTP = dispatch => ({

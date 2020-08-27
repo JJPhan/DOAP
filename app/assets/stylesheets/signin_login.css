@@ -10,6 +10,13 @@
     height: 800px;
 }
 
+.footer {
+    background: black;
+    padding-top: 50px;
+    height: 100px;
+    width: auto;
+}
+
 .formtype {
     /* padding-top: 3; */
     display: flex;
