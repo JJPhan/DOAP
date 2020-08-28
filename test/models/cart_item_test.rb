@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: listings
+# Table name: cart_items
 #
 #  id         :bigint           not null, primary key
-#  size       :float            not null
-#  price      :integer          not null
+#  user_id    :integer          not null
+#  listing_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  sneaker_id :integer          not null
 #
 require 'test_helper'
 
-class ListingTest < ActiveSupport::TestCase
+class CartItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

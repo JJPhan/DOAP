@@ -4,8 +4,8 @@ export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 
-export const IS_OPEN = "IS_OPEN";
-export const IS_CLOSED = "IS_CLOSED";
+export const IS_LIST_OPEN = "IS_LIST_OPEN";
+export const IS_LIST_CLOSED = "IS_LIST_CLOSED";
 
 const receiveListings = (listings) => ({
     type: RECEIVE_LISTINGS,
@@ -23,11 +23,11 @@ const receiveListingErrors = (errors) => ({
 })
 
 export const openListings = (is_open) => ({
-    type: IS_OPEN, is_open
+    type: IS_LIST_OPEN, is_open
 })
 
 export const closeListings = (is_closed) => ({
-    type: IS_CLOSED, is_closed
+    type: IS_LIST_CLOSED, is_closed
 })
 
 export const requestListings = (sneakerId) => dispatch => {

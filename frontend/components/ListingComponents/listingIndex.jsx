@@ -12,18 +12,19 @@ class ListingIndex extends React.Component {
         const { listings } = this.props;
 
         return (
-            <div>
-                <h1> SIZE PREFERENCES</h1>
-                <p> Buy New </p>
-                <p> US Men Sizes</p>
+            <div className="listing-index" >
+                <div className="listing-header">
+                    {/* <h1> SIZE PREFERENCES</h1> */}
+                    <p> Buy New </p>
+                    <p> US Men Sizes</p>
+                </div>
 
 
                 <ul className="listing-idx">
                     { listings.map( (listing) => 
                         <ListingIndexItem key={ listing.id } listing={listing} /> ) }
                 </ul>
-
-
+                
             </div>
         )
     }
@@ -31,4 +32,3 @@ class ListingIndex extends React.Component {
 
 
 export default ListingIndex 
-

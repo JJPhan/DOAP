@@ -140,3 +140,14 @@ right 0
 sign-inbox right:
 position
 */
+
+.show-listing-button{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 401px; */
+    bottom: 0;
+    border: 1px solid lightgray;
+    border-top: 2px soliday lightgray;
+    height: 10%;
+}
+

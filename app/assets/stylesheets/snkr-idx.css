@@ -5,11 +5,7 @@
     font-family: Arial;
     padding: 200px 0 125px 0 ;
     text-align: center;
-
-}
-
-.test-header {
-    padding: 500px;
+    
 }
 
 
@@ -89,16 +85,17 @@
     justify-content: center;
     width: 50%;
     border-right: 1px solid black;
-
+    height: 100%
+    
 }
 
+
+
 .sneaker-show-img {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    align-items: center;
     height: auto;
     width: 80%;
     padding-bottom: 50px;
+    margin: auto;
 }
 
 .sneaker-show-left > :last-child {
@@ -107,11 +104,51 @@
     padding-top: 80px;
 }
 
+.sneaker-show-right {
+    width: 50%;
+}
+
 .sneaker-img-container {
     overflow: auto;
     height: 400px;
 }
 
+.listing-index {
+    overflow: auto;
+    height: 600px;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.listing-idx {
+    height: 80%;
+    top: 0;
+    margin: 50px;
+}
+
+.show-listing-button {
+    /* border: 2px solid red;
+    width: 100%; */
+        display: flex;
+    /* align-items: flex-end; */
+    /* margin-top: 401px; */
+    bottom: 0;
+    border: 1px solid lightgray;
+    border-top: 2px soliday lightgray;
+    height: 10%;
+}
+
+.listing-row {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    padding: 15px;
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    width: 100%;
+}
 
 .sneaker-desc {
     display: flex;
@@ -170,19 +207,10 @@
 }
 
 .main-content {
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 10%;
+    margin-left: 10%;
     border-left: 1px solid black;
     border-right: 1px solid black; 
     overflow: auto;
     /* width: 80%; */
-}
-
-
-.listing-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    margin: 5px;
-    
 }

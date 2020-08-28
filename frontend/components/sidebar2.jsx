@@ -40,7 +40,7 @@ class Sidebar2 extends React.Component {
     
     render() {
         let openShow = this.props.is_open ? "sidebar-open" : ""
-
+        console.log(this.props)
         return(
             <div>
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}

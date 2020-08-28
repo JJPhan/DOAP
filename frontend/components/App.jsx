@@ -6,17 +6,19 @@ import Navbar from './navbar'
 import Sidebar2 from './sidebar2'
 import SneakerIndexContainer from './SneakerComponents/SneakerIndex'
 import SneakerComponent from '../components/SneakerComponents/Sneaker'
+import Homepage from '../components/homepage'
 // import AuthRoute from '../util/route_util'
 
 const App = () => {
     return (
             <div className="main-content">
+                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
                 <div>
                     <Navbar />
-                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
                     
                     <Sidebar2 />
                 </div>
+                    <Route exact path="/" component={Homepage} />
                     <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
                     <Route exact path="/login" component={LoginFormContainer} />
                     <Route exact path="/signup" component={SignupFormContainer} />
