@@ -54,7 +54,6 @@ class Sidebar2 extends React.Component {
                         <li><div><Link to='/adidas' onClick={this.submit} > ADIDAS </Link></div></li>
 
                         <li><div>Styles</div></li>
-                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > !!! DONT CLICK !!!  </a></div></li>
 
                         <li>
                             <a href="https://github.com/JJPhan">
@@ -66,6 +65,7 @@ class Sidebar2 extends React.Component {
                                 <i className="fab fa-linkedin"></i> LinkedIn                      
                             </a>
                         </li>
+                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > !!! DONT CLICK !!!  </a></div></li>
                         <li><ul>{this.renderBottomSidebar()}</ul></li>
                     </ul>
                 </div >
