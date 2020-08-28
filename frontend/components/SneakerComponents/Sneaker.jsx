@@ -2,7 +2,7 @@ import React from 'react'
 import {requestSneaker} from '../../actions/sneaker_actions'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { requestListings, openListings } from '../../actions/listing_actions'
+import { requestListings, openListings, closeListings } from '../../actions/listing_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
 
 // import {IS_OPEN, IS_CLOSED} from 
@@ -13,6 +13,7 @@ class SneakerComponent extends React.Component {
         super(props) 
         this.renderListings = this.renderListings.bind(this)
         this.openWindow = this.openWindow.bind(this)
+        // this.closeWindow = this.closeWindow.bind(this)
     }
 
     componentDidMount() {
@@ -21,23 +22,27 @@ class SneakerComponent extends React.Component {
         this.props.requestListings(this.props.match.params.sneakerId)
     }
 
+    componentWillUnmount() {
+        this.props.closeListings(false)
+    }
+
+
     openWindow() {
-        console.log(this.props)
         this.props.openListings(true)
     }
 
     renderListings() {
-        const { sneaker, listings } = this.props
+        const { sneaker, listings, closeListings } = this.props
         if (this.props.listWindowOpen) {
             return (
                 <div>
-                        <ListingIndex listings={this.props.listings} />
+                    <ListingIndex listings={listings} closeListings={closeListings} />
                 </div>
         )} else { 
             return (
-                <div>
-                    <div> {`${sneaker.name}`} </div>
-                    <div> {`${sneaker.sku}`}  </div>
+                <div className="default-sneaker-show-right">
+                    <div > {`${sneaker.name}`} </div>
+                    <div> SKU: {`${sneaker.sku}`}  </div>
                     <button className="show-listing-button" onClick={this.openWindow}> BUY NEW </button>
                 </div>            
             )
@@ -62,11 +67,6 @@ class SneakerComponent extends React.Component {
                         <div> {`${sneaker.brand} / ${sneaker.silhouette} / ${sneaker.name}`} </div>
                     </div>
 
-                    {/* <div>
-                        <div> {`${sneaker.name}`} </div>
-                        <div> {`${sneaker.sku}`}  </div>
-                        <button className="show-listing-button" > BUY NEW </button>
-                    </div>    */}
                     <div className="sneaker-show-right"> {this.renderListings() }</div>
 
                   
@@ -74,7 +74,8 @@ class SneakerComponent extends React.Component {
 
 
                 <div className="sneaker-desc">
-                    <h1> DETAILS <i className="fas fa-chevron-down"></i>  </h1>
+                    <h1> D E T A I L S </h1>
+                    <i className="fas fa-chevron-down"></i>
                     <h1> {`${sneaker.name}`} </h1>
                     <p> {`${sneaker.description}`}</p>
                 </div>
@@ -122,7 +123,7 @@ const mDTP = (dispatch) => {
         requestSneaker: (sneakerId) => dispatch(requestSneaker(sneakerId)),
         requestListings: (sneakerId) => dispatch(requestListings(sneakerId)),
         openListings: (is_open) => dispatch(openListings(is_open)),
-        close_listings: (is_closed) => dispatch(closeListings(is_closed))
+        closeListings: (is_closed) => dispatch(closeListings(is_closed))
     })
 
 }

@@ -9,22 +9,26 @@ class ListingIndex extends React.Component {
     }
 
     render() {
-        const { listings } = this.props;
+        const { listings, closeListings } = this.props;
 
         return (
             <div className="listing-index" >
                 <div className="listing-header">
-                    {/* <h1> SIZE PREFERENCES</h1> */}
-                    <p> Buy New </p>
-                    <p> US Men Sizes</p>
+                    <div>
+                        <p> Buy New </p>
+                        <p> US Men Sizes</p>
+                    </div>  
+                    
+
                 </div>
 
 
                 <ul className="listing-idx">
                     { listings.map( (listing) => 
-                        <ListingIndexItem key={ listing.id } listing={listing} /> ) }
+                        <ListingIndexItem key={listing.id} listing={listing} /> ) }
                 </ul>
                 
+                <button className="close-list-window" onClick={() => closeListings(false) }> TEST </button>
             </div>
         )
     }
