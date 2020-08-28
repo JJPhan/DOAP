@@ -37,6 +37,8 @@ class SneakerComponent extends React.Component {
             return (
                 <div>
                     <ListingIndex listings={listings} closeListings={closeListings} />
+                    <button className="close-list-window" onClick={() => closeListings(false)}> CLOSE LISTING </button>
+
                 </div>
         )} else { 
             return (

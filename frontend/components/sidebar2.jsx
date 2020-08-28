@@ -48,6 +48,8 @@ class Sidebar2 extends React.Component {
                     <ul className="sidebar_items">
                         <li><div><Link to='/' onClick={this.submit}> Discover </Link></div> </li> 
                         <li><div><Link to='/sneakers' onClick={this.submit} > Shop All </Link></div></li>
+                        <li><div><Link to='/airjordans' onClick={this.submit} > JORDAN BRAND </Link></div></li>
+
                         <li><div>Brands</div></li>
                         <li><div>Collections</div></li>
                         <li><div>Styles</div></li>
