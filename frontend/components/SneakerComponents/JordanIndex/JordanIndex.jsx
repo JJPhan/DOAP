@@ -29,7 +29,7 @@ class JordanIndex extends React.Component {
                     </div>
 
                     <div className="category2-description">
-                        Originally released in 1985, the Air Jordan 1 is rightfully billed as the sneaker that started it all. When Michael Jordan stepped onto the hardwood in the original Black/Red colorway, the shoe immediately earned a legion of fans while kick-starting the history of flight.
+                        Designed by Tinker Hatfield, the Jordan Retro 3 is the sneaker that introduced elephant print and visible Air to Michael Jordan’s signature line. Embroidered on the tongue was the new Jumpman logo, a fitting icon for the shoe that MJ wore when he took flight from the free throw line during the ’88 Dunk Contest.
                     </div>
                 </div>
 
