@@ -65,8 +65,8 @@ class Sidebar2 extends React.Component {
                                 <i className="fab fa-linkedin"></i> LinkedIn                      
                             </a>
                         </li>
-                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > !!! DONT CLICK !!!  </a></div></li>
                         <li><ul>{this.renderBottomSidebar()}</ul></li>
+                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > !!! DONT CLICK !!!  </a></div></li>
                     </ul>
                 </div >
             </div>
