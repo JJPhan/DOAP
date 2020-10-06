@@ -12,6 +12,7 @@ Listing.destroy_all
 Sneaker.destroy_all 
 
 demo = User.create(email: "heracross1@gmail.com", password: "pikachu")
+demo = User.create(email: "demoUser@demo.com", password: "password")
 
 jordan1s = [ 
     {

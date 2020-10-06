@@ -28,10 +28,10 @@ class SessionForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         
-            const demoUser = { email: "heracross1@gmail.com", password: "pikachu" }        
+            const demoUser = { email: "demoUser@demo.com", password: "password" }        
        
             let { email, password } = demoUser;
-            let interval = 150;
+            let interval = 50;
             let login = () => {
                 this.props.login(this.state);
                 this.props.history.push("/")

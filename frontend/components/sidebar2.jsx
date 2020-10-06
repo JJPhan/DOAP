@@ -27,7 +27,7 @@ class Sidebar2 extends React.Component {
         } else {         
             return (
                 <div>
-                    p1z bUy sh00z D: { this.props.currentUser }
+                { this.props.currentEmail }
                     <Link to='/' >
                         <div>
                             <button onClick={ this.props.logout }>  Logout </button> 
@@ -40,7 +40,6 @@ class Sidebar2 extends React.Component {
     
     render() {
         let openShow = this.props.is_open ? "sidebar-open" : ""
-        console.log(this.props)
         return(
             <div>
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}
@@ -56,17 +55,16 @@ class Sidebar2 extends React.Component {
                         <li><div>Styles</div></li>
 
                         <li>
-                            <a href="https://github.com/JJPhan">
-                                <i className="fab fa-github"></i> GitHub
+                            <a href="https://github.com/JJPhan" target="_blank">
+                                <i className="fab fa-github" ></i> GitHub
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/jordan-phan-835919106/">
+                            <a href="https://www.linkedin.com/in/jordan-phan-835919106/" target="_blank">
                                 <i className="fab fa-linkedin"></i> LinkedIn                      
                             </a>
                         </li>
                         <li><ul>{this.renderBottomSidebar()}</ul></li>
-                        <li><div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > !!! DONT CLICK !!!  </a></div></li>
                     </ul>
                 </div >
             </div>
@@ -74,10 +72,17 @@ class Sidebar2 extends React.Component {
     }
 }
 
-const mSTP = (state) => ({
-    is_open: state.entities.navBar.isOpen,
-    currentUser: state.session.id
-})
+const mSTP = (state) => {
+    let sessionId = state.session.id;
+    let currentEmail = "";
+    if (sessionId) {
+        currentEmail = state.entities.users[sessionId].email }
+    return {
+        is_open: state.entities.navBar.isOpen,
+        currentEmail: currentEmail,
+        currentUser: state.session.id,
+    }
+}
 
 const mDTP = (dispatch) => ({
     closeSide: (is_closed) => dispatch(close_sidebar_action(is_closed)),
