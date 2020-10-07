@@ -6,8 +6,6 @@ class Search extends React.Component {
         super(props)
 
         this.state = {
-            // sneakers: "",
-            // filtered: "",
             searchQuery: ""
         }     
     }
@@ -66,54 +64,6 @@ class Search extends React.Component {
             ))
             filteredSneakers.push(sneaker)
         })
-
-
-        // console.log(filteredSneakers.length)
-        // if (filteredSneakers.length === 0) {
-        //     console.log(filteredSneakers)
-        //     filteredSneakers = sneakers
-        //     console.log(filteredSneakers)
-        // }
-        
-// attempt B)
-
-        // searchTerms.every(terms => {
-        //     sneakers.forEach(sneaker => {
-        //         if (sneaker.name.toLowerCase().includes(terms) ||
-        //         sneaker.description.toLowerCase().includes(terms) ||
-        //         sneaker.brand.toLowerCase().includes(terms) ||
-        //         sneaker.colorway.toLowerCase().includes(terms) ||
-        //         sneaker.silhouette.toLowerCase().includes(terms) ||
-        //         sneaker.category.toLowerCase().includes(terms)
-        //         ) 
-        //         filteredSneakers.push(sneaker)
-        //     })
-        // })
-
-        // if (!searchTerms.length > 1) filteredSneakers = this.props.sneakers
-        // console.log(searchTerms.length)
-        // console.log(searchTerms.length > 1)
-        // console.log(searchTerms)
-
-// attempt C)
-        // searchTerms.every(terms => {
-        //     sneakers.forEach(sneaker => {
-        //         if (sneaker.name.toLowerCase().includes(terms) ||
-        //         sneaker.description.toLowerCase().includes(terms) ||
-        //         sneaker.brand.toLowerCase().includes(terms) ||
-        //         sneaker.colorway.toLowerCase().includes(terms) ||
-        //         sneaker.silhouette.toLowerCase().includes(terms) ||
-        //         sneaker.category.toLowerCase().includes(terms)
-        //         ) 
-        //         // return true
-        //         filteredSneakers.push(sneaker)
-        //     })
-        //     // filteredSneakers.push(sneaker)
-        // })
-
-        // console.log(filteredSneakers)
-        // console.log(searchTerms)
-
 
         return (
             <div>
