@@ -1,12 +1,13 @@
 import React from 'react'
+import SneakerIndexItem from '../SneakerComponents/SneakerIndex'
 
 class Search extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            sneakers: "",
-            filtered: [],
+            // sneakers: "",
+            // filtered: "",
             searchQuery: ""
         }     
     }
@@ -15,13 +16,13 @@ class Search extends React.Component {
         this.props.requestSneakers();
     }
 
-    componentDidUpdate() {
-        if (!this.state.sneakers) {
-            this.setState({ 
-                sneakers: this.props.sneakers
-            })
-        }
-    }
+    // componentDidUpdate() {
+    //     if (!this.state.sneakers) {
+    //         this.setState({ 
+    //             sneakers: this.props.sneakers
+    //         })
+    //     }
+    // }
 
     update(field) {
         return e => {
@@ -38,24 +39,96 @@ class Search extends React.Component {
 
     // add the sneaker into the search filter
 
-    filter() {
-        let filtered = this.state.filtered;
-        let sneakers = this.state.sneakers;
-
-        
-    }
+      
+    // }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
+
+
+        let searchTerms = this.state.searchQuery.split(" ");
+        let sneakers = this.props.sneakers;
+        let filteredSneakers = []; 
+
+        searchTerms = searchTerms.map(term => term.toLowerCase())
+
+
+// attempt A)
+        sneakers.forEach(sneaker => {
+            // if (searchTerms.length === 1) return
+            if (searchTerms.every(terms => 
+                (sneaker.name.toLowerCase().includes(terms) ||
+                sneaker.description.toLowerCase().includes(terms) ||
+                sneaker.brand.toLowerCase().includes(terms) ||
+                sneaker.colorway.toLowerCase().includes(terms) ||
+                sneaker.silhouette.toLowerCase().includes(terms) ||
+                sneaker.category.toLowerCase().includes(terms)
+                ) 
+            ))
+            filteredSneakers.push(sneaker)
+        })
+
+
+        // console.log(filteredSneakers.length)
+        // if (filteredSneakers.length === 0) {
+        //     console.log(filteredSneakers)
+        //     filteredSneakers = sneakers
+        //     console.log(filteredSneakers)
+        // }
+        
+// attempt B)
+
+        // searchTerms.every(terms => {
+        //     sneakers.forEach(sneaker => {
+        //         if (sneaker.name.toLowerCase().includes(terms) ||
+        //         sneaker.description.toLowerCase().includes(terms) ||
+        //         sneaker.brand.toLowerCase().includes(terms) ||
+        //         sneaker.colorway.toLowerCase().includes(terms) ||
+        //         sneaker.silhouette.toLowerCase().includes(terms) ||
+        //         sneaker.category.toLowerCase().includes(terms)
+        //         ) 
+        //         filteredSneakers.push(sneaker)
+        //     })
+        // })
+
+        // if (!searchTerms.length > 1) filteredSneakers = this.props.sneakers
+        // console.log(searchTerms.length)
+        // console.log(searchTerms.length > 1)
+        // console.log(searchTerms)
+
+// attempt C)
+        // searchTerms.every(terms => {
+        //     sneakers.forEach(sneaker => {
+        //         if (sneaker.name.toLowerCase().includes(terms) ||
+        //         sneaker.description.toLowerCase().includes(terms) ||
+        //         sneaker.brand.toLowerCase().includes(terms) ||
+        //         sneaker.colorway.toLowerCase().includes(terms) ||
+        //         sneaker.silhouette.toLowerCase().includes(terms) ||
+        //         sneaker.category.toLowerCase().includes(terms)
+        //         ) 
+        //         // return true
+        //         filteredSneakers.push(sneaker)
+        //     })
+        //     // filteredSneakers.push(sneaker)
+        // })
+
+        // console.log(filteredSneakers)
+        // console.log(searchTerms)
+
+
         return (
             <div>
                 <form > 
                     <input type="text" className="search-box" 
-                    value={this.state.searchQuery} 
-                    onChange={this.update('searchQuery')}/>
+                    value={this.state.searchQuery }
+                    placeholder={"Enter Brand / Model / Colorway"}
+                    onChange={this.update('searchQuery')}
+                    />
                 </form>
-                test
+                {filteredSneakers.map(sneaker => 
+                    // <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> 
+                    <ul>{sneaker.name}</ul>
+                    )
+                }
             </div>
         )
     }
