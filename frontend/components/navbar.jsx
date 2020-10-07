@@ -26,7 +26,7 @@ class Navbar extends React.Component {
                         <li><Link className="discover" to='/'> Discover </Link> </li>
                         <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
                         <li><Link className="styles" to='/'> Styles </Link></li>
-                        <i className="fas fa-search"></i>
+                        <li><Link i className="fas fa-search" to='/search' /></li>
                         <li>  
                             <div className="hamBar">
                                 <i className="fas fa-bars" onClick={this.submit} ></i>

@@ -15,6 +15,17 @@ class Api::SneakersController < ApplicationController
         render :index
     end
 
+    def search
+        @sneakers = 
+            Sneaker.where("name LIKE ?", "%" + params[:q] + "%") 
+            # Sneaker.where("description LIKE ?", "%" + params[:q] + "%") || 
+            # Sneaker.where("brand LIKE ?", "%" + params[:q] + "%") || 
+            # Sneaker.where("colorway LIKE ?", "%" + params[:q] + "%") || 
+            # Sneaker.where("silhouette LIKE ?", "%" + params[:q] + "%") || 
+            # Sneaker.where("category LIKE ?", "%" + params[:q] + "%")
+
+    end
+
     # json.array! @sneakers, :name, :description, :release_date, :sku, :brand, :colorway, :silhouette, :category
 
 end

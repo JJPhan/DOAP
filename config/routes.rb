@@ -7,10 +7,13 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :sneakers, only: [:show, :index] do
       resources :listings, only: [:index]
+      resources :search
     end
 
     resources :listings, only: [:show]
+    resources :search
 
   end
+
   
 end
