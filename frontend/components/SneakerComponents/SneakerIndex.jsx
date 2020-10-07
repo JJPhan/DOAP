@@ -13,7 +13,6 @@ class SneakerIndex extends React.Component {
 // so we update the state then have access to to 'sneakers'
 
     componentDidMount() {
-        // debugger
         this.props.requestSneakers()
     }
 
@@ -26,7 +25,6 @@ class SneakerIndex extends React.Component {
                 <ul className="snkr-idx">
                     {sneakers.map(sneaker => 
                     <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> )}
-
                 </ul>
             </div>
         )
