@@ -1,28 +1,21 @@
 import React from 'react'
-import SneakerIndexItem from '../SneakerComponents/SneakerIndex'
+import SearchItems from '../SearchComponent/SearchItem'
+import { Link, Redirect } from 'react-router-dom';
 
 class Search extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            // sneakers: "",
-            // filtered: "",
             searchQuery: ""
-        }     
+        }
+        this.submit = this.submit.bind(this) 
+        this.redirectSearch = this.redirectSearch.bind(this)    
     }
     
     componentDidMount() {
         this.props.requestSneakers();
     }
-
-    // componentDidUpdate() {
-    //     if (!this.state.sneakers) {
-    //         this.setState({ 
-    //             sneakers: this.props.sneakers
-    //         })
-    //     }
-    // }
 
     update(field) {
         return e => {
@@ -30,31 +23,42 @@ class Search extends React.Component {
         }
     }
 
+    submit(){ 
+        this.props.closeSide(false)
+    }
+
+    redirectSearch(e) {
+        e.preventDefault();
+        setTimeout((() => { 
+        if (this.state.searchQuery === "") {
+            this.props.history.push("/sneakers")
+        }  else {
+            this.props.history.push(`/search/${this.state.searchQuery}`);
+        }
+    }), 300)
+        this.props.closeSide(false)
+
+    }
+
+
 
     // filter method 
     // iterate through the search query
     // if the each word in the search query is found in at least one of the sneaker's attribute
         // split and iterate through search query
         // 
-
     // add the sneaker into the search filter
-
-      
-    // }
 
     render() {
 
-
-        let searchTerms = this.state.searchQuery.split(" ");
+        let searchTerms = this.state.searchQuery.split(" "); // "blue jordan" => [blue, jordan]
         let sneakers = this.props.sneakers;
         let filteredSneakers = []; 
 
         searchTerms = searchTerms.map(term => term.toLowerCase())
 
 
-// attempt A)
         sneakers.forEach(sneaker => {
-            // if (searchTerms.length === 1) return
             if (searchTerms.every(terms => 
                 (sneaker.name.toLowerCase().includes(terms) ||
                 sneaker.description.toLowerCase().includes(terms) ||
@@ -67,68 +71,35 @@ class Search extends React.Component {
             filteredSneakers.push(sneaker)
         })
 
+        if (this.state.searchQuery === "") filteredSneakers = []
 
-        // console.log(filteredSneakers.length)
-        // if (filteredSneakers.length === 0) {
-        //     console.log(filteredSneakers)
-        //     filteredSneakers = sneakers
-        //     console.log(filteredSneakers)
-        // }
         
-// attempt B)
 
-        // searchTerms.every(terms => {
-        //     sneakers.forEach(sneaker => {
-        //         if (sneaker.name.toLowerCase().includes(terms) ||
-        //         sneaker.description.toLowerCase().includes(terms) ||
-        //         sneaker.brand.toLowerCase().includes(terms) ||
-        //         sneaker.colorway.toLowerCase().includes(terms) ||
-        //         sneaker.silhouette.toLowerCase().includes(terms) ||
-        //         sneaker.category.toLowerCase().includes(terms)
-        //         ) 
-        //         filteredSneakers.push(sneaker)
-        //     })
-        // })
-
-        // if (!searchTerms.length > 1) filteredSneakers = this.props.sneakers
-        // console.log(searchTerms.length)
-        // console.log(searchTerms.length > 1)
-        // console.log(searchTerms)
-
-// attempt C)
-        // searchTerms.every(terms => {
-        //     sneakers.forEach(sneaker => {
-        //         if (sneaker.name.toLowerCase().includes(terms) ||
-        //         sneaker.description.toLowerCase().includes(terms) ||
-        //         sneaker.brand.toLowerCase().includes(terms) ||
-        //         sneaker.colorway.toLowerCase().includes(terms) ||
-        //         sneaker.silhouette.toLowerCase().includes(terms) ||
-        //         sneaker.category.toLowerCase().includes(terms)
-        //         ) 
-        //         // return true
-        //         filteredSneakers.push(sneaker)
-        //     })
-        //     // filteredSneakers.push(sneaker)
-        // })
-
-        // console.log(filteredSneakers)
-        // console.log(searchTerms)
-
+        let openShow = this.props.is_open ? "sidebar-open" : ""
 
         return (
+            
             <div>
-                <form > 
-                    <input type="text" className="search-box" 
-                    value={this.state.searchQuery }
-                    placeholder={"Enter Brand / Model / Colorway"}
-                    onChange={this.update('searchQuery')}
+                {this.props.is_open && <div className="overlay" onClick={this.submit } />}
+                <div className={"sidebar "+openShow} >                   
+                 <form className="sidebar-search"
+                    onSubmit={this.redirectSearch}> 
+                        <i className="fas fa-search magnify" />
+                        <input type="text" className="sidebar-searchbox" 
+                        value={this.state.searchQuery }
+                        // placeholder={"Enter Name / Brand / Model / Colorway / Description"}
+                        placeholder="Type To Search"
+                        onChange={this.update('searchQuery')}
                     />
-                </form>
-                {filteredSneakers.map(sneaker => 
-                    // <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> 
-                    <ul>{sneaker.name}</ul>
+                    </form>
+                
+                {filteredSneakers.slice(0, 4).map(sneaker => 
+                    <ul className="search-items-container" onClick={this.submit}><SearchItems sneaker={sneaker} submit={this.submit}/></ul>
                     )
                 }
+                <div onClick={this.redirectSearch}> test </div>
+                </div>
+
             </div>
         )
     }

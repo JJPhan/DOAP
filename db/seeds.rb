@@ -50,7 +50,7 @@ jordan1s = [
     },
     {
         name: "Air Jordan 1 Retro High OG 'Storm Blue'",
-        description: "As one quarter of Nike's Best Hand in the Game collection, the Air Jordan 1 Retro High OG 'Clay Green' is designed to represent unique milestones in Michael Jordan's career. This sneaker features a Summit White and black leather upper with green suede accents and the original Nike Air logo on the tongue tag. The shoe also sports the traditional 'Black Toe' blocking scheme on the toe box and midfoot. Graphics depicting a full-house of playing cards grace the insoles, symbolizing some of Jordan's biggest career accomplishments: Championship Winner, Offensive Player of the Year, Defensive Player of the Year, and Hall of Fame induction. This model was released exclusively on Nike's SNKRS app and at select retailers in North America.",
+        description: "Having never seen a retro release, the Air Jordan 1 Retro High OG 'Storm Blue' retroed as part of the Air Jordan Holiday 2016 pack. The shoe features the original Air Jordan 1 branding elements like the Nike Air logo on the tongue, the Air Jordan ‘Wings’ logo, and a clean Jumpman logo-free heel. The other sneakers in the Holiday 2016 pack included: Air Jordan 3 ‘True Blue’, Air Jordan 1 'Top 3', Air Jordan 9 OG 'Space Jam', Air Jordan 11 'Space Jam', Air Jordan 3 'Wool', Air Jordan 11 GS Velvet 'Night Maroon', Air Jordan 7 'Doernbecher', Air Jordan 16 'Midnight Navy', Air Jordan 1 OG 'Storm Blue', and Air Jordan 6 'Black Cat'.",
         release_date: "2016-12-23",
         sku: "555088 127",
         brand: "Air Jordan",
@@ -72,7 +72,7 @@ jordan1s = [
     },
     {
         name: "Air Jordan 1 Retro High OG 'Blue Moons'",
-        description: "First released in Europe in May 2018, the Retro High OG ‘Yellow Ochre’ is part of the ‘Best Hand in the Game’ collection. The group is comprised of four different colorways of the classic Air Jordan 1 silhouette, each representing a significant milestone in Michael Jordan’s career. All four shoes in the collection feature black toe blocking and a hand of cards on the right insole — the Yellow Ochre colorway celebrating Jordan’s five MVP titles with a royal flush — a detail some view as an indirect nod to the player’s unparallelled competitive spirit.",
+        description: "As one quarter of Nike's Best Hand in the Game collection, the Air Jordan 1 Retro High OG 'Blue Moon' is designed to honor Michael Jordan’s biggest career achievements. This sneaker features a black and Summit White leather upper with blue suede accents and the original Nike Air logo on the tongue tag. The shoe also sports the traditional 'Black Toe' blocking scheme on the toe box and midfoot. A graphic of a straight flush on the right insole pays homage to Jordan's NBA All-Star Game appearances. This model was released exclusively at select Jordan Brand retailers in North America.",
         release_date: "2018-04-30",
         sku: "555088 115",
         brand: "Air Jordan",
@@ -87,14 +87,14 @@ jordan1s = [
         release_date: "2018-04-30",
         sku: "555088 109",
         brand: "Air Jordan",
-        colorway: "Summit White/Blue Moon-Black",
+        colorway: "Summit White/Yellow Ochre-Black",
         silhouette: "Air Jordan 1",
         category: "Lifestyle"
         # nickname: "Yellow Ochre"
     },
     {
         name: "Air Jordan 1 Retro High OG 'Track Red'",
-        description: "The Air Jordan 3 Retro OG ‘True Blue’ was released as one of the four OG colorways in 1988. It saw several non-OG retro releases, starting in 2001, in 2009 (Europe only), and again in 2011 as part of a wide Air Jordan 3 retro release that commemorated the 23rd anniversary of the shoe. The 2016 retro saw the ‘True Blue’ return again, but this time with the original branding and logo details that mimic the 1988 release.",
+        description: "The Air Jordan 1 Retro High OG in Track Red is one of four colorways in the ‘Best Hand in the Game Pack’ of Jordan 1s. Released in May 2018, the pack celebrates Michael Jordan’s biggest career milestones. The Track Red model, which sports a Chicago Bulls scheme of red, white and black, specifically references Jordan’s six championships with a six-of-a-kind card hand on the right insole. The playing card symbol appears throughout the pack as a nod to the icon’s competitive spirit. Dropped exclusively in Asia and Europe, this iteration of the Jordan 1 is updated with soft suede Swoosh, while the signature black toe blocking remains.",
         release_date: "2018-04-30",
         sku: "555088 112",
         brand: "Air Jordan",
