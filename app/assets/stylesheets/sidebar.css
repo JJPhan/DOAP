@@ -23,10 +23,10 @@
     position: absolute;
     right: -200%;
     height: 100%;
-    background: whitesmoke;
+    background: white;
     top: 0;
     bottom: 0;  
-    width: 300px;
+    width: 400px;
     transition: right 0.5s ease-in-out;
     z-index: 999;
 }
@@ -37,7 +37,7 @@
     align-content: space-between;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 10px;
-    border-bottom: lightgray solid 2px;
+    border-bottom: lightgray solid 1px;
     padding: 20px;
     font-size: 14px;
 }
@@ -51,12 +51,13 @@
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between; 
-    width: 150px;
+    width: 100%;
 }
 
 .loginBut {
-    padding-right: 35px;
     border-right: 2px solid lightgray;
+    width: 50%;
+    text-align: center;
 }
 /* .signInLinks > * {
     display: flex;
@@ -72,6 +73,10 @@
 } 
 
 
-/* .overall-sidebar {
-    height: 100%;
-} */
+.signin-buttons-container {
+    width: 100%
+}
+
+.sidebar-signup {
+    border: none;
+}

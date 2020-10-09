@@ -3,7 +3,7 @@ import {Route} from 'react-router'
 import LoginFormContainer from './session_form/LoginFormContainer'
 import SignupFormContainer from './session_form/SignupFormContainer'
 import Navbar from './navbar'
-import Sidebar2 from './sidebar2'
+import SidebarContainer from './SidebarComponents/SidebarContainer'
 import SneakerIndexContainer from './SneakerComponents/SneakerIndex'
 import SneakerComponent from '../components/SneakerComponents/Sneaker'
 import Homepage from '../components/homepage'
@@ -17,11 +17,8 @@ const App = () => {
     return (
             <div className="main-content">
                     <Route exact path="/sneakers" component={SneakerIndexContainer} />
-                {/* <div> */}
                     <Navbar />
-                    
-                    <Sidebar2 />
-                {/* </div> */}
+                    <SidebarContainer />
                     <Route exact path="/" component={Homepage} />
                     <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
                     <Route exact path="/airjordans" component={JordanIndex} />

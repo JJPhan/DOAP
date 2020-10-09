@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchItems from '../SearchComponent/SearchItem'
+import SneakerIndexItem from '../SneakerComponents/SneakerIndex'
 
 class Search extends React.Component {
     constructor(props) {
@@ -7,8 +7,7 @@ class Search extends React.Component {
 
         this.state = {
             searchQuery: ""
-        }
-        this.submit = this.submit.bind(this)     
+        }     
     }
     
     componentDidMount() {
@@ -20,13 +19,6 @@ class Search extends React.Component {
             this.setState( {[field]: e.currentTarget.value })
         }
     }
-
-    submit(){ 
-        this.props.closeSide(false)
-    }
-
-
-
     // filter method 
     // iterate through the search query
     // if the each word in the search query is found in at least one of the sneaker's attribute
@@ -57,32 +49,20 @@ class Search extends React.Component {
             filteredSneakers.push(sneaker)
         })
 
-        if (this.state.searchQuery === "") filteredSneakers = []
-
-        
-
-        let openShow = this.props.is_open ? "sidebar-open" : ""
-
         return (
-            
             <div>
-                {this.props.is_open && <div className="overlay" onClick={this.submit } />}
-                <div className={"sidebar "+openShow} >
-                    <form className="sidebar-search"> 
-                        <i className="fas fa-search magnify" />
-                        <input type="text" className="sidebar-searchbox" 
-                        value={this.state.searchQuery }
-                        // placeholder={"Enter Name / Brand / Model / Colorway / Description"}
-                        placeholder="Type To Search"
-                        onChange={this.update('searchQuery')}
+                <form > 
+                    <input type="text" className="search-box" 
+                    value={this.state.searchQuery }
+                    placeholder={"Enter Name / Brand / Model / Colorway / Description"}
+                    onChange={this.update('searchQuery')}
                     />
-                    </form>
-                
-                {filteredSneakers.slice(0, 4).map(sneaker => 
-                    <ul className="search-items-container" onClick={this.submit}><SearchItems sneaker={sneaker} submit={this.submit}/></ul>
+                </form>
+                {filteredSneakers.map(sneaker => 
+                    // <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> 
+                    <ul>{sneaker.name}</ul>
                     )
                 }
-                </div>
             </div>
         )
     }

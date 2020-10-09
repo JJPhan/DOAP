@@ -6,12 +6,18 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
-        this.submit = this.submit.bind(this)
+        this.openSide = this.openSide.bind(this)
+        this.openSearch = this.openSearch.bind(this)
     }
 
-    submit() {
+    openSide() {
         // console.log(this .props)
-        this.props.openSide(true)
+        // pass in two parameters
+        this.props.openSide(true, false)
+    }
+
+    openSearch() {
+        this.props.openSide(true, true)
     }
 
     render(){
@@ -26,10 +32,12 @@ class Navbar extends React.Component {
                         <li><Link className="discover" to='/'> Discover </Link> </li>
                         <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
                         <li><Link className="styles" to='/'> Styles </Link></li>
-                        <li><Link to='/search'><i className="fas fa-search"></i></Link></li>
+                        <li onClick={this.openSearch} >
+                            <i className="fas fa-search nav-magnify" />
+                        </li>
                         <li>  
                             <div className="hamBar">
-                                <i className="fas fa-bars" onClick={this.submit} ></i>
+                                <i className="fas fa-bars" onClick={this.openSide} ></i>
                             </div>  
                         </li>
                     </ul>
@@ -40,7 +48,7 @@ class Navbar extends React.Component {
 }
 
 const mDTP = dispatch => ({
-    openSide: (is_open) => dispatch(open_sidebar_action(is_open)),
+    openSide: (is_open, isSearch) => dispatch(open_sidebar_action(is_open, isSearch)),
     // closeSide: (is_closed) => dispatch(closed_sidebar_action(is_closed))
 })
 
