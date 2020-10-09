@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Search from './Search'
 import {requestSneakers, requestSneaker} from '../../actions/sneaker_actions'
 import {close_sidebar_action} from '../../actions/navbar_actions'
-
+import {withRouter} from 'react-router-dom'
 
 
 const mSTP = (state, ownProps) => ({
@@ -18,4 +18,4 @@ const mDTP = (dispatch) => ({
     requestSneakers: () => dispatch(requestSneakers()) 
 })
 
-export default connect(mSTP, mDTP)(Search)
+export default withRouter(connect(mSTP, mDTP)(Search))

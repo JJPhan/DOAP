@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchItems from '../SearchComponent/SearchItem'
+import { Link, Redirect } from 'react-router-dom';
 
 class Search extends React.Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Search extends React.Component {
         this.state = {
             searchQuery: ""
         }
-        this.submit = this.submit.bind(this)     
+        this.submit = this.submit.bind(this) 
+        this.redirectSearch = this.redirectSearch.bind(this)    
     }
     
     componentDidMount() {
@@ -25,6 +27,19 @@ class Search extends React.Component {
         this.props.closeSide(false)
     }
 
+    redirectSearch(e) {
+        e.preventDefault();
+        setTimeout((() => { 
+        if (this.state.searchQuery === "") {
+            this.props.history.push("/sneakers")
+        }  else {
+            this.props.history.push(`/search/${this.state.searchQuery}`);
+        }
+    }), 300)
+        this.props.closeSide(false)
+
+    }
+
 
 
     // filter method 
@@ -36,7 +51,6 @@ class Search extends React.Component {
 
     render() {
 
-        console.log(this.state)
         let searchTerms = this.state.searchQuery.split(" "); // "blue jordan" => [blue, jordan]
         let sneakers = this.props.sneakers;
         let filteredSneakers = []; 
@@ -67,8 +81,9 @@ class Search extends React.Component {
             
             <div>
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}
-                <div className={"sidebar "+openShow} >
-                    <form className="sidebar-search"> 
+                <div className={"sidebar "+openShow} >                   
+                 <form className="sidebar-search"
+                    onSubmit={this.redirectSearch}> 
                         <i className="fas fa-search magnify" />
                         <input type="text" className="sidebar-searchbox" 
                         value={this.state.searchQuery }
@@ -82,7 +97,9 @@ class Search extends React.Component {
                     <ul className="search-items-container" onClick={this.submit}><SearchItems sneaker={sneaker} submit={this.submit}/></ul>
                     )
                 }
+                <div onClick={this.redirectSearch}> test </div>
                 </div>
+
             </div>
         )
     }

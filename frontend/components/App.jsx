@@ -10,26 +10,24 @@ import Homepage from '../components/homepage'
 import JordanIndex from '../components/SneakerComponents/JordanIndex/JordanIndex'
 import NikeDunkIndex from '../components/SneakerComponents/NikeIndex/NikeDunkIndex'
 import AdidasIndex from '../components/SneakerComponents/AdidasIndex/AdidasIndex'
-import SearchContainer from '../components/SearchComponent/SearchContainer'
+import SearchIndexContainer from '../components/SearchComponent/SearchIndexContainer'
 // import AuthRoute from '../util/route_util'
 
 const App = () => {
     return (
             <div className="main-content">
-                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
                     <Navbar />
                     <SidebarContainer />
+                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
                     <Route exact path="/" component={Homepage} />
                     <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
                     <Route exact path="/airjordans" component={JordanIndex} />
                     <Route exact path="/nikedunks" component={NikeDunkIndex} />
                     <Route exact path="/adidas" component={AdidasIndex} />
-
                     <Route exact path="/login" component={LoginFormContainer} />
                     <Route exact path="/signup" component={SignupFormContainer} />
-                    <Route exact path="/search" component={SearchContainer} />
-                    {/* <Route exact path="/categroy/:category" component={`${sneaker.category}Component`} /> */}
-                    <div className="footer"></div>
+                    <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
+                   <div className="footer"></div>
             </div>
     )
 }
