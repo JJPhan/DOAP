@@ -76,7 +76,12 @@ class Search extends React.Component {
         
 
         let openShow = this.props.is_open ? "sidebar-open" : ""
-
+        let popHidden = (this.state.searchQuery.length > 0) ? "popHidden" : ""
+        // console.log("test1")
+        console.log(this.state.searchQuery)
+        console.log(this.state.searchQuery.length )
+        console.log(this.state.searchQuery.length > 1)
+        console.log(popHidden)
         return (
             
             <div>
@@ -91,13 +96,27 @@ class Search extends React.Component {
                         placeholder="Type To Search"
                         onChange={this.update('searchQuery')}
                     />
-                    </form>
+                </form>
+                <div className={"popular-search " + popHidden} >
+                    <h1 className="pop-header"> Popular Searches </h1>
+                    <Link to={`/nikedunks`} className="popular-brands" onClick={this.submit } > 
+                        Nike Dunks
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </Link>
+                    <Link to={`/airjordans`} className="popular-brands" onClick={this.submit }> 
+                        Air Jordan 
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </Link>
+                    <Link to={`/adidas`} className="popular-brands" onClick={this.submit }> 
+                        Adidas 
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </Link>
+                </div>
                 {/* {if (!this.state.searchQuery.length === 0) "Top Four Search Results " } */}
                 {filteredSneakers.slice(0, 5).map(sneaker => 
                     <ul className="search-items-container" onClick={this.submit}><SearchItems sneaker={sneaker} submit={this.submit}/></ul>
                     )
                 }
-                <div onClick={this.redirectSearch}> test </div>
                 </div>
 
             </div>
