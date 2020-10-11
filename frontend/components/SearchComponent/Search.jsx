@@ -92,8 +92,8 @@ class Search extends React.Component {
                         onChange={this.update('searchQuery')}
                     />
                     </form>
-                
-                {filteredSneakers.slice(0, 4).map(sneaker => 
+                {/* {if (!this.state.searchQuery.length === 0) "Top Four Search Results " } */}
+                {filteredSneakers.slice(0, 5).map(sneaker => 
                     <ul className="search-items-container" onClick={this.submit}><SearchItems sneaker={sneaker} submit={this.submit}/></ul>
                     )
                 }
