@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
                         <input className="inputBox" type="text" value={this.state.email} onChange={this.update('email')}></input>
                         <label className="signInLabel" > Password </label>
                         <input className="inputBox" type="password" value={this.state.password} onChange={this.update('password')}></input>
-                        { this.props.errors.map( (error, idx) => <li key={idx} >  {error}  </li>) } 
+                        { this.props.errors.map( (error, idx) => <li className="session-errors" key={idx} >  {error}  </li>) } 
                     </form>
                     <div className="session-buttons">
                         <input className="submit-button" form="form1" type="submit" value={`${this.props.formType === "login" ? "Log In" : "Sign Up"}`}></input>

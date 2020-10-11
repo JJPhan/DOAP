@@ -151,3 +151,10 @@ position
     height: 10%;
 }
 
+.session-errors {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    color: red;
+}
+

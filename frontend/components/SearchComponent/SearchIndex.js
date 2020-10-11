@@ -39,8 +39,8 @@ class SearchIndex extends React.Component {
 
         return (
             <div>
-                <h1> Search Results for {`${this.props.location.pathname.slice(8)}`} </h1>
-
+                <h1 className="search-heading1"> Search Results for " {`${this.props.location.pathname.slice(8)}`} " </h1>
+                <h1 className="search-heading2"> Diplaying {`${filteredSneakers.length}`} Search Results </h1>
                 <ul className="snkr-idx">
                     {filteredSneakers.map(sneaker => 
                     <SneakerIndexItem key={sneaker.id} sneaker={sneaker} /> )}

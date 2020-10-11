@@ -383,7 +383,7 @@ dunklow = [
     },
     {
         name: "Dunk Low SB 'Night of Mischief'",
-        description: "Made in collaboration with Ben & Jerry’s, the Nike Dunk Low SB ‘Chunky Dunky’ replicates the packaging used for the ice cream brand’s Chunky Monkey flavor. The leather upper depicts blue skies and green pastures, while pony-hair overlays are rendered in a spotted cow print. A yellow leather Swoosh is treated to a melting ice cream effect for added visual flair. Atop the tongue, the woven tag features a Chunky Dunky callout alongside Nike SB branding.",
+        description: "Released on Halloween day, the Dunk Low SB 'Night of Mischief' revamps the 1985 hoops shoe with a spooky vibe. A nylon tongue hosts an oozing brand tag, and the surrounding suede upper is executed in a midnight motif. Tumbled orange leather makes up the Swoosh logo and jack-o-lantern-perforated toe box, while purple spider-web embroidery defines the sides. Insoles are covered in a close-up photo of pumpkin guts to complete the theme.",
         release_date: "2019-10-31",
         sku: "BQ6817 006",
         brand: "Nike",

@@ -21,6 +21,7 @@
 
 .magnify {
     padding-left: 10%;
+    font-size: 200%;
 }
 
 .search-items-container {
@@ -42,4 +43,49 @@
 
 .search-item-name {
     margin-left: 20px;
+}
+
+.search-heading1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15%
+}
+
+
+.search-heading2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+
+
+.popular-search {
+    /* height: 100px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0 5% 0 5% 0;    
+}
+
+.popular-brands {
+    margin: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+
+.pop-header {
+    margin: 5% 20px 2% 20px;
+    font-size: 15px;
+}
+
+.popHidden {
+    display: none;
 }
