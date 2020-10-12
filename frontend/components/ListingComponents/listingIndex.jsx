@@ -12,7 +12,7 @@ class ListingIndex extends React.Component {
         const { listings, closeListings } = this.props;
 
         return (
-            <div>
+            <div className="listings-container">
                 <div className="listing-index" >
                     <div className="listing-header">
                             <p> Buy New </p>
@@ -22,11 +22,16 @@ class ListingIndex extends React.Component {
 
                     <ul className="listing-idx">
                         { listings.map( (listing) => 
-                            <ListingIndexItem key={listing.id} listing={listing} /> ) }
+                            // <ListingIndexItem key={listing.id} listing={listing} /> ) }
+                          <li className="listing-row">
+                            <div className="listing-size">{ listing.size } </div>
+                            <div className="listing-price"> $ {listing.price}.00 </div> 
+                        </li>  )}
+    
+                   
                     </ul>
-                    
+                        
                 </div>
-                {/* <button className="close-list-window" onClick={() => closeListings(false) }> TEST </button> */}
              </div>
         )
     }

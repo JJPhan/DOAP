@@ -26,7 +26,6 @@ class SneakerComponent extends React.Component {
         this.props.closeListings(false)
     }
 
-
     openWindow() {
         this.props.openListings(true)
     }
@@ -36,7 +35,7 @@ class SneakerComponent extends React.Component {
         if (this.props.listWindowOpen) {
             return (
                 <div>
-                    <ListingIndex listings={listings} closeListings={closeListings} />
+                    <ListingIndex className="listings-container" listings={listings} closeListings={closeListings} />
                     <button className="close-list-window" onClick={() => closeListings(false)}> CLOSE LISTING </button>
 
                 </div>

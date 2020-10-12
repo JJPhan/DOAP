@@ -8,8 +8,8 @@ const ListingIndexItem = (props) => {
         
         <li className="listing-row">
             
-            <div>{ props.listing.size } </div>
-            <div> $ {props.listing.price}.00 </div>
+            <div className="listing-size">{ props.listing.size } </div>
+            <div className="listing-price"> $ {props.listing.price}.00 </div>
         </li>
     )
 }
