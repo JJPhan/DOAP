@@ -3,6 +3,7 @@ import {requestSneaker} from '../../actions/sneaker_actions'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { requestListings, openListings, closeListings } from '../../actions/listing_actions'
+import { openCartWindow } from '../../actions/cart_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
 
 // import {IS_OPEN, IS_CLOSED} from 
@@ -13,6 +14,7 @@ class SneakerComponent extends React.Component {
         super(props) 
         this.renderListings = this.renderListings.bind(this)
         this.openWindow = this.openWindow.bind(this)
+        this.openCartWindow = this.openCartWindow.bind(this)
         // this.closeWindow = this.closeWindow.bind(this)
     }
 
@@ -20,26 +22,46 @@ class SneakerComponent extends React.Component {
         // console.log(this.props)
         this.props.requestSneaker(this.props.match.params.sneakerId),
         this.props.requestListings(this.props.match.params.sneakerId)
+        // this.props.
     }
 
     componentWillUnmount() {
         this.props.closeListings(false)
+        this.props.openCartWindow(false)
     }
 
     openWindow() {
         this.props.openListings(true)
     }
 
+    openCartWindow() {
+        this.props.openListings(false)
+        this.props.openCartWindow(true)
+    }
+
+
+
     renderListings() {
-        const { sneaker, listings, closeListings } = this.props
+        const { sneaker, listings, closeListings} = this.props
         if (this.props.listWindowOpen) {
             return (
                 <div>
-                    <ListingIndex className="listings-container" listings={listings} closeListings={closeListings} />
+                    <ListingIndex className="listings-container" 
+                        listings={listings} 
+                        closeListings={closeListings} 
+                        openCartWindow={this.openCartWindow()}                        
+                        />
                     <button className="close-list-window" onClick={() => closeListings(false)}> CLOSE LISTING </button>
-
                 </div>
-        )} else { 
+            )
+        // } 
+        // else if (this.props.cartWindowOpen) { 
+        //     return (
+        //         <div>
+        //             test
+        //         </div>
+        //     )
+        } else { 
             return (
                 <div className="default-sneaker-show-right">
                     <div > {`${sneaker.name}`} </div>
@@ -49,6 +71,10 @@ class SneakerComponent extends React.Component {
             )
         }
     }
+
+    // renderCartWindow() {
+
+    // }
 
 
     render() {
@@ -101,7 +127,6 @@ class SneakerComponent extends React.Component {
                         <span>CATEGORY</span> <span>{sneaker.category}</span>
                     </li>                       
                 </ul>
-
             </div>
         )
     }
@@ -109,22 +134,22 @@ class SneakerComponent extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return ({
         sneaker: state.entities.sneakers[ownProps.match.params.sneakerId],
         listings: Object.values(state.entities.listings),
-        listWindowOpen: state.ui.isOpen
+        listWindowOpen: state.ui.listingWindow.isOpen,
+        cartWindowOpen: state.ui.cartWindowOpen
     })
 }
 
 
 const mDTP = (dispatch) => {
-    // debugger 
     return ({
         requestSneaker: (sneakerId) => dispatch(requestSneaker(sneakerId)),
         requestListings: (sneakerId) => dispatch(requestListings(sneakerId)),
         openListings: (is_open) => dispatch(openListings(is_open)),
-        closeListings: (is_closed) => dispatch(closeListings(is_closed))
+        closeListings: (is_closed) => dispatch(closeListings(is_closed)),
+        openCartWindow: (is_open) => dispatch(openCartWindow(is_open))
     })
 
 }

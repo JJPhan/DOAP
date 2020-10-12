@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import ListingIndexItem from './listingIndexItem'
+// import ListingIndexItem from './listingIndexItem'
 
 class ListingIndex extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class ListingIndex extends React.Component {
                     <ul className="listing-idx">
                         { listings.map( (listing) => 
                             // <ListingIndexItem key={listing.id} listing={listing} /> ) }
-                          <li className="listing-row">
+                          <li className="listing-row" onClick={() => openCartWindow()}>
                             <div className="listing-size">{ listing.size } </div>
                             <div className="listing-price"> $ {listing.price}.00 </div> 
                         </li>  )}
