@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { requestListings, openListings, closeListings } from '../../actions/listing_actions'
 import { openCartWindow } from '../../actions/cart_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
-
+import CartWindow from '../CartComponents/CartWindowComponent'
 // import {IS_OPEN, IS_CLOSED} from 
 
 
@@ -56,9 +56,7 @@ class SneakerComponent extends React.Component {
         } 
         else if (this.props.cartWindowOpen) { 
             return (
-                <div>
-                    test
-                </div>
+                <CartWindow /> 
             )
         } else { 
             return (
@@ -136,7 +134,8 @@ const mSTP = (state, ownProps) => {
         sneaker: state.entities.sneakers[ownProps.match.params.sneakerId],
         listings: Object.values(state.entities.listings),
         listWindowOpen: state.ui.listingWindow.isOpen,
-        cartWindowOpen: state.ui.cartWindow.cartWindowOpen
+        cartWindowOpen: state.ui.cartWindow.cartWindowOpen,
+        currentUser: state.session.id,
     })
 }
 

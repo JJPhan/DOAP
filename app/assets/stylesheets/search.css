@@ -22,6 +22,7 @@
 .magnify {
     padding-left: 10%;
     font-size: 200%;
+    color: grey; 
 }
 
 .search-items-container {
