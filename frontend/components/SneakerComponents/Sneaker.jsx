@@ -19,7 +19,6 @@ class SneakerComponent extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
         this.props.requestSneaker(this.props.match.params.sneakerId),
         this.props.requestListings(this.props.match.params.sneakerId)
         // this.props.
@@ -49,18 +48,18 @@ class SneakerComponent extends React.Component {
                     <ListingIndex className="listings-container" 
                         listings={listings} 
                         closeListings={closeListings} 
-                        openCartWindow={this.openCartWindow()}                        
+                        openCartWindow={() => this.openCartWindow()}                        
                         />
                     <button className="close-list-window" onClick={() => closeListings(false)}> CLOSE LISTING </button>
                 </div>
             )
-        // } 
-        // else if (this.props.cartWindowOpen) { 
-        //     return (
-        //         <div>
-        //             test
-        //         </div>
-        //     )
+        } 
+        else if (this.props.cartWindowOpen) { 
+            return (
+                <div>
+                    test
+                </div>
+            )
         } else { 
             return (
                 <div className="default-sneaker-show-right">
@@ -81,7 +80,6 @@ class SneakerComponent extends React.Component {
         const {sneaker, listings } = this.props
         if (!this.props.sneaker) return null 
         // let showListings = this.props.listings
-        
         return (
             <div>
                 <div className="sneaker-show-form">
@@ -138,7 +136,7 @@ const mSTP = (state, ownProps) => {
         sneaker: state.entities.sneakers[ownProps.match.params.sneakerId],
         listings: Object.values(state.entities.listings),
         listWindowOpen: state.ui.listingWindow.isOpen,
-        cartWindowOpen: state.ui.cartWindowOpen
+        cartWindowOpen: state.ui.cartWindow.cartWindowOpen
     })
 }
 

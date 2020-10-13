@@ -9,7 +9,7 @@ class ListingIndex extends React.Component {
     }
 
     render() {
-        const { listings, closeListings } = this.props;
+        const { listings, closeListings, openCartWindow } = this.props;
 
         return (
             <div className="listings-container">
