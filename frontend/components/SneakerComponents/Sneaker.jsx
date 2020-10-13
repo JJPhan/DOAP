@@ -46,6 +46,7 @@ class SneakerComponent extends React.Component {
             return (
                 <div>
                     <ListingIndex className="listings-container" 
+                        sneaker={sneaker}
                         listings={listings} 
                         closeListings={closeListings} 
                         openCartWindow={() => this.openCartWindow()}                        
@@ -56,7 +57,7 @@ class SneakerComponent extends React.Component {
         } 
         else if (this.props.cartWindowOpen) { 
             return (
-                <CartWindow /> 
+                <CartWindow sneaker={sneaker}/> 
             )
         } else { 
             return (
