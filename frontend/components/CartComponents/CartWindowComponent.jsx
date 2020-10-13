@@ -7,10 +7,14 @@ class CartWindow extends React.Component {
     }
 
     render() {
-        <div>
-            <h1> Lowest Price</h1>
-            
-        </div>
+        return( 
+            <div>
+                <h1> IN PROGRESS - CART </h1>
+                
+            </div>
+        )
     }
 
 }
+
+export default CartWindow
