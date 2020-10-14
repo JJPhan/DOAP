@@ -374,3 +374,6 @@
     width: 50%;
 }
 
+.displayNone {
+    display: none;
+}

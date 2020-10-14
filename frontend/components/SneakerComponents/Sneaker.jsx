@@ -15,6 +15,10 @@ class SneakerComponent extends React.Component {
         this.renderListings = this.renderListings.bind(this)
         this.openWindow = this.openWindow.bind(this)
         this.openCartWindow = this.openCartWindow.bind(this)
+        this.closeAllWindows = this.closeAllWindow(this)
+        this.state = {
+            listing: null
+        }
         // this.closeWindow = this.closeWindow.bind(this)
     }
 
@@ -33,14 +37,24 @@ class SneakerComponent extends React.Component {
         this.props.openListings(true)
     }
 
-    openCartWindow() {
+    openCartWindow(listing) {
         this.props.openListings(false)
         this.props.openCartWindow(true)
+        this.setState({
+            listing: listing
+        })
+    }
+
+    closeAllWindow() {
+        this.props.openListings(false)
+        this.props.openCartWindow(false)
     }
 
 
 
     renderListings() {
+        let hideDefault = this.props.cartWindowOpen ? "displayNone" : "" 
+
         const { sneaker, listings, closeListings} = this.props
         if (this.props.listWindowOpen) {
             return (
@@ -48,8 +62,9 @@ class SneakerComponent extends React.Component {
                     <ListingIndex className="listings-container" 
                         sneaker={sneaker}
                         listings={listings} 
+                        closeAllWindow={this.closeAllWindow}
                         closeListings={closeListings} 
-                        openCartWindow={() => this.openCartWindow()}                        
+                        openCartWindow={this.openCartWindow}                        
                         />
                     <button className="close-list-window" onClick={() => closeListings(false)}> CLOSE LISTING </button>
                 </div>
@@ -57,11 +72,16 @@ class SneakerComponent extends React.Component {
         } 
         else if (this.props.cartWindowOpen) { 
             return (
-                <CartWindow sneaker={sneaker}/> 
+                <CartWindow 
+                    listing={this.state.listing}
+                    sneaker={sneaker}
+                    openCartWindow={() => this.closeAllWindow()}
+                    closeAllWindow={()=> this.closeAllWindow()}
+                /> 
             )
         } else { 
             return (
-                <div className="default-sneaker-show-right">
+                <div className={"default-sneaker-show-right " + hideDefault }>
                     <div > {`${sneaker.name}`} </div>
                     <div> SKU: {`${sneaker.sku}`}  </div>
                     <button className="show-listing-button" onClick={this.openWindow}> BUY NEW </button>

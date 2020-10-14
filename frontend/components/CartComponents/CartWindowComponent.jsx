@@ -12,14 +12,14 @@ class CartWindow extends React.Component {
         return( 
             <div>
                 <h1> Lowest Price </h1>
-                {/* <h1> {props.listing.price} </h1> */}
+                <h1> {this.props.listing.price} </h1>
                 <div> 
                     <div> ITEM </div>
                     <div> {this.props.sneaker.name} </div>
                 </div>
                 <div> 
                     <div> SIZE </div>
-                    {/* <div> {props.listing.price} </div> */}
+                    <div> {this.props.listing.size} </div>
                 </div>
                 <div> 
                     <div> CONDITION </div>
@@ -29,9 +29,10 @@ class CartWindow extends React.Component {
                     <div> BOX </div>
                     <div> Good Condition </div>
                 </div>
-                {console.log("test")}
-                {console.log(this.props)}
-                {/* <button onClick={ this.props.openCartWindow(false) }> Click </button> */}
+         
+                {/* <button onClick={() => this.props.closeAllWindow()}>close</button> */}
+
+                <button onClick={() => this.props.closeAllWindow(false) }> Click </button>
             </div>
         )
     }
