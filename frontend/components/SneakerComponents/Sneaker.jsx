@@ -6,7 +6,6 @@ import { requestListings, openListings, closeListings } from '../../actions/list
 import { openCartWindow } from '../../actions/cart_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
 import CartWindow from '../CartComponents/CartWindowComponent'
-// import {IS_OPEN, IS_CLOSED} from 
 
 
 class SneakerComponent extends React.Component {
@@ -19,7 +18,7 @@ class SneakerComponent extends React.Component {
         this.state = {
             listing: null
         }
-        // this.closeWindow = this.closeWindow.bind(this)
+
     }
 
     componentDidMount() {
@@ -75,6 +74,7 @@ class SneakerComponent extends React.Component {
                 <CartWindow 
                     listing={this.state.listing}
                     sneaker={sneaker}
+                    currentUser={this.props.currentUser}
                     openCartWindow={() => this.closeAllWindow()}
                     closeAllWindow={()=> this.closeAllWindow()}
                 /> 
