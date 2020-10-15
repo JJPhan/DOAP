@@ -1,18 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-// import ListingIndexItem from './listingIndexItem'
+import CartWindow from '../CartComponents/CartWindowComponent'
+import ListingRow from './ListingRow'
 
 class ListingIndex extends React.Component {
     constructor(props) {
         super(props)
     }
 
+
+
+    renderCart() {
+        <CartWindow listing={this.props.listing} /> 
+    }
+
     render() {
         const { listings, closeListings, openCartWindow } = this.props;
+        let hideDefault = this.props.cartWindowOpen ? "displayNone" : "" 
 
         return (
-            <div className="listings-container">
+            
+            <div className={"listings-container " + hideDefault}>
                 <div className="listing-index" >
                     <div className="listing-header">
                             <p> Buy New </p>
@@ -22,13 +30,13 @@ class ListingIndex extends React.Component {
 
                     <ul className="listing-idx">
                         { listings.map( (listing) => 
-                            // <ListingIndexItem key={listing.id} listing={listing} /> ) }
-                          <li className="listing-row" onClick={() => openCartWindow()}>
-                            <div className="listing-size">{ listing.size } </div>
-                            <div className="listing-price"> $ {listing.price}.00 </div> 
-                        </li>  )}
-    
-                   
+                            <ListingRow key={listing.id} 
+                                listing={listing} 
+                                openCartWindow={this.props.openCartWindow}
+                                closeAllWindow={this.props.closeAllWindow}
+                                 />
+                            ) 
+                        }                   
                     </ul>
                         
                 </div>
