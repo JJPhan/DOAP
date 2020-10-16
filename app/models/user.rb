@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
     has_many :cart_items,
         foreign_key: :user_id,
-        class_name: :Cart_item
+        class_name: :CartItem
 
         
     ##SPIRE

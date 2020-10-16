@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
 
     resources :listings, only: [:show]
-
+    resources :cart_items, only: [:create, :index, :destroy]
   end
   
 end

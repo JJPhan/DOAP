@@ -1,7 +1,10 @@
-
+import * as CartAPIUtil from '../util/cart_item_api_util'
 
 export const IS_CART_OPEN = "IS_CART_OPEN";
-// export const IS_CART_CLOSED = "IS_CART_CLOSED";
+export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
+export const RECEIVE_CART = "RECEIVE_CART";
+export const DESTROY_CART_ITEM = "DESTORY_CART_ITEM"
+
 
 export const openCartWindow = (is_open) => {
     return ({
@@ -9,3 +12,22 @@ export const openCartWindow = (is_open) => {
         is_open
     })
 }
+
+
+const receiveCartItem = (id) => ({
+    type: RECEIVE_CART_ITEM,
+    id
+})
+
+const receiveCart = (cart) => ({
+    type: RECEIVE_CART,
+    cart
+})
+
+const deleteCartItem = (id) => ({
+    type: DESTROY_CART_ITEM,
+    id
+})
+
+
+// export const requestCartItem = ()

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as sneakers from './util/sneaker_api_util'
 import * as listings from './util/listing_api_util'
 import configureStore from './store/store'
+import * as cart from './util/cart_item_api_util'
 
 import Root from './components/root'
 
@@ -19,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchSneakers = sneakers.fetchSneakers
     window.fetchListings = listings.fetchListings
     window.fetchListing = listings.fetchListing
-    
+    window.fetchCartItems = cart.fetchCartItems
+    window.addCartItem = cart.addCartItem
+    window.removeCartItem = cart.removeCartItem
     // store 
     // window.signup = signup;
     // window.store = store;
