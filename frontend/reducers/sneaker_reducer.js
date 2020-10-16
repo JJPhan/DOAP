@@ -10,7 +10,6 @@ const SneakersReducer = (state = {}, action) => {
             return action.sneakers
         case RECEIVE_SNEAKER:
             nextState[action.sneaker.id] = action.sneaker
-            // debugger
             return nextState
         default:
             return state

@@ -5,12 +5,13 @@ export const fetchCartItems = () => (
     })
 )
 
-export const addCartItem = (cartItem) => {
+// camel vs snake case -> camel case did not work....?
+export const addCartItem = (cart_item) => {
     return (
         $.ajax({
             method: "POST",
             url: "/api/cart_items",
-            data: { cartItem: cartItem}
+            data: { cart_item: cart_item}
         })
     )
 }

@@ -32,6 +32,7 @@ class ListingIndex extends React.Component {
                         { listings.map( (listing) => 
                             <ListingRow key={listing.id} 
                                 listing={listing} 
+                                listingId={listing.id}
                                 openCartWindow={this.props.openCartWindow}
                                 closeAllWindow={this.props.closeAllWindow}
                                  />
