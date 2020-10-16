@@ -18,5 +18,4 @@ class CartItem < ApplicationRecord
     belongs_to :listings,
         foreign_key: :listing_id,
         class_name: :Listing
-
 end

@@ -1,13 +1,12 @@
 class Api::CartItemsController < ApplicationController
 
     def create
-        @cart_item = Cart_item.new(cart_item_params)
+        @cart_item = CartItem.new(cart_item_params)
         if @cart_item.save
             render :show
-        else
+        else            
             render json: ["Invalid params"]
         end
-
     end
 
     def index
@@ -15,12 +14,11 @@ class Api::CartItemsController < ApplicationController
         render :index
     end
 
-    # def update
-    #     @cart_item = Cart.find()
-    # end
+    def destroy
+        @cart_item = CartItem.find_by(id: params[:id])
+        @cart_item.destroy
+    end
 
-    # def delete
-    # end
 
     private
     def cart_item_params
