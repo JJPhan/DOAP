@@ -8,3 +8,5 @@ json.set! @cart_item.id do
     json.sneakerPhoto url_for(@cart_item.listings.sneaker.photo[0])
 end
 
+
+

@@ -17,7 +17,7 @@ class ListingRow extends React.Component {
 
     render() {
         return (
-            <li className="listing-row listingWindow" onClick={() => this.props.openCartWindow(this.props.listing)}>
+            <li className="listing-row listingWindow" onClick={() => this.props.openCartWindow(this.props.listing, this.props.listing.id)}>
                 <div className="listing-size listingWindow">{ this.props.listing.size } </div>
                 <div className="listing-price cartWindow"> $ {this.props.listing.price}.00 </div> 
             </li>  
