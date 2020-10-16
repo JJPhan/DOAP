@@ -5,12 +5,12 @@ class Api::CartItemsController < ApplicationController
         if @cart_item.save
             render :show
         else            
-            render json: ["Invalid params"]
+            render json: ["Item is already in cart!"]
         end
     end
 
     def index
-        @cart_items = Cart_items.all
+        @cart_items = CartItem.all
         render :index
     end
 
