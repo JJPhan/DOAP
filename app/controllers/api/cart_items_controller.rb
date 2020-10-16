@@ -2,6 +2,7 @@ class Api::CartItemsController < ApplicationController
 
     def create
         @cart_item = CartItem.new(cart_item_params)
+        # debugger
         if @cart_item.save
             render :show
         else            
@@ -10,7 +11,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def index
-        @cart_items = CartItem.all
+        @cart_items = current_user.cart_items
         render :index
     end
 

@@ -10,10 +10,12 @@ class CartWindow extends React.Component {
     }
 
     renderButtons() {
-        
+        // console.log(this.props)
         let secondButton 
         if (this.props.currentUser) {
-            secondButton = <button className="cart-window-button"> Buy</button>
+            secondButton = <Link to='/cart' className="cart-window-button"
+                                onClick={() => this.props.addCartItem({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
+                                > Buy</Link>
         } else {
             secondButton = <Link className="cart-window-button" to='/login'>Sign in 2 continue</Link>
         }
@@ -30,6 +32,7 @@ class CartWindow extends React.Component {
 
 
     render() {
+
         return( 
             <div>
                 <div className="cart-window">

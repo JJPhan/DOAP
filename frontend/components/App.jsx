@@ -11,6 +11,7 @@ import JordanIndex from '../components/SneakerComponents/JordanIndex/JordanIndex
 import NikeDunkIndex from '../components/SneakerComponents/NikeIndex/NikeDunkIndex'
 import AdidasIndex from '../components/SneakerComponents/AdidasIndex/AdidasIndex'
 import SearchIndexContainer from '../components/SearchComponent/SearchIndexContainer'
+import CartContainer from '../components/CartComponents/CartContainer'
 // import AuthRoute from '../util/route_util'
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
                     <Route exact path="/login" component={LoginFormContainer} />
                     <Route exact path="/signup" component={SignupFormContainer} />
                     <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
+                    <Route exact path="/cart" component={CartContainer} />
                    <div className="footer"></div>
             </div>
     )

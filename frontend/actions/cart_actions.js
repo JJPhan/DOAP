@@ -15,9 +15,8 @@ export const openCartWindow = (is_open) => {
     })
 }
 
-
 const createCartItem = (cartItem) => ({
-    type: CREATE_CART_ITEM,
+    type: RECEIVE_CART_ITEM,
     cartItem
 })
 
@@ -48,10 +47,11 @@ export const requestCart = () => dispatch => {
 
 export const addCartItem = (cartItem) => dispatch => {
     return ( CartAPIUtil.addCartItem(cartItem)
-    .then(cartItem => dispatch(createCartItem(cartItem))))
+    .then(cartItem => { 
+        return (dispatch(createCartItem(cartItem)))}))
 }
 
 export const removeCartItem = (id) => dispatch => {
-    return ( CartAPIUtil.removeCartItem(cartItemId)
+    return ( CartAPIUtil.removeCartItem(id)
     .then(() => dispatch(deleteCartItem(id))))
 }

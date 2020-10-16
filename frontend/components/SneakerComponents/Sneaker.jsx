@@ -3,10 +3,9 @@ import {requestSneaker} from '../../actions/sneaker_actions'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { requestListings, openListings, closeListings } from '../../actions/listing_actions'
-import { openCartWindow } from '../../actions/cart_actions'
+import { openCartWindow, addCartItem } from '../../actions/cart_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
 import CartWindow from '../CartComponents/CartWindowComponent'
-
 
 class SneakerComponent extends React.Component {
     constructor(props) {
@@ -36,11 +35,12 @@ class SneakerComponent extends React.Component {
         this.props.openListings(true)
     }
 
-    openCartWindow(listing) {
+    openCartWindow(listing, listingId) {
         this.props.openListings(false)
         this.props.openCartWindow(true)
         this.setState({
-            listing: listing
+            listing: listing,
+            listingId: listingId
         })
     }
 
@@ -73,10 +73,12 @@ class SneakerComponent extends React.Component {
             return (
                 <CartWindow 
                     listing={this.state.listing}
+                    listingId={this.state.listingId}
                     sneaker={sneaker}
                     currentUser={this.props.currentUser}
                     openCartWindow={() => this.closeAllWindow()}
                     closeAllWindow={()=> this.closeAllWindow()}
+                    addCartItem={(cartItem) => this.props.addCartItem(cartItem)}
                 /> 
             )
         } else { 
@@ -167,7 +169,8 @@ const mDTP = (dispatch) => {
         requestListings: (sneakerId) => dispatch(requestListings(sneakerId)),
         openListings: (is_open) => dispatch(openListings(is_open)),
         closeListings: (is_closed) => dispatch(closeListings(is_closed)),
-        openCartWindow: (is_open) => dispatch(openCartWindow(is_open))
+        openCartWindow: (is_open) => dispatch(openCartWindow(is_open)),
+        addCartItem: (cartItem) => dispatch(addCartItem(cartItem))
     })
 
 }
