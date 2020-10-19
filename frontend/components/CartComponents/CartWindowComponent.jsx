@@ -34,8 +34,8 @@ class CartWindow extends React.Component {
     render() {
 
         return( 
-            <div>
-                <div className="cart-window">
+            <div className="cart-window">
+                <div>
                     <div className="cart-header">
                         <h1> Lowest Price </h1>
                         <h1> ${this.props.listing.price} </h1>

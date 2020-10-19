@@ -12,10 +12,16 @@ class SidebarForm extends React.Component {
         this.submit = this.submit.bind(this)
         this.renderBottomSidebar = this.renderBottomSidebar.bind(this)
         this.sidebarType = this.sidebarType.bind(this)
+        this.sidebarLogout = this.sidebarLogout.bind(this)
     }
 
     submit(){ 
         this.props.closeSide(false)
+    }
+
+    sidebarLogout() {
+        this.props.logout()
+        this.props.closeSide()
     }
 
     renderBottomSidebar() {
@@ -32,7 +38,7 @@ class SidebarForm extends React.Component {
                 { this.props.currentEmail }
                     <Link to='/' >
                         <div>
-                            <button onClick={ this.props.logout }>  Logout </button> 
+                            <button onClick={ this.sidebarLogout }>  Logout </button> 
                         </div>
                     </Link>
                 </div>

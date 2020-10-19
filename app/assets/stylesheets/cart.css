@@ -32,11 +32,83 @@
     height: 100%;
     width: 50%;
     border: 1px solid grey;
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 
 .cart-window {
-    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sneaker-cart-img {
+    height: 20px;
+    width: auto;
+}
+
+.shopping-cart {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.left-cart-window {
+    width: 50%;
+    border-right: 1px solid black;
+    height: auto
+}
+
+.right-cart-window {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkout-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    margin: 2%;
+}
+
+.checkout-header {
+    text-align: center;
+    margin: 5% 0 5% 0;
+}
+
+.checkout-linked:hover span {
+    display: none;
+}
+
+.checkout-linked:hover:before {
+    content: "LinkedIn"
+}
+
+.checkout-gh:hover span {
+    display: none;
+}
+
+.checkout-gh:hover:before {
+    content: "GitHub"
+}
+
+.checkout-buttons {
+    /* display: flex; */
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.checkout-button-links {
+    display: flex;
+    height: 10%;
+    text-align: center;
+    align-items: center;
 }
