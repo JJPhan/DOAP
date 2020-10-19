@@ -7,6 +7,13 @@ class CartWindow extends React.Component {
     constructor(props) {
         super(props)
         this.renderButtons = this.renderButtons.bind(this)
+        this.state = {
+            sneakerId: "0"
+        }
+    }
+
+    componentDidMount() {
+        this.setState({sneakerId: this.props.sneaker.id}) 
     }
 
     renderButtons() {
@@ -17,7 +24,7 @@ class CartWindow extends React.Component {
                                 onClick={() => this.props.addCartItem({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
                                 > Buy</Link>
         } else {
-            secondButton = <Link className="cart-window-button" to='/login'>Sign in 2 continue</Link>
+            secondButton = <Link className="cart-window-button" to={`/login?id=${this.state.sneakerId}`}>Login to Continue</Link>
         }
 
         return (

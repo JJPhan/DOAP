@@ -129,6 +129,11 @@
     align-items: center;
 }
 
+.loginbuttons:hover {
+    background-color: black;
+    color: white;
+}
+
 
 /* 
 session-button: 
