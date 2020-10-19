@@ -21,20 +21,38 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign( {}, this.state )
+        let params = new URLSearchParams(this.props.location.search).get("id")
+        if (!params) {
         this.props.processForm(user)
             .then(() => this.props.history.push('/'));
+        } else {
+        console.log("true")
+            this.props.processForm(user)
+            .then(() => this.props.history.push(`/sneakers/${params}`));
+        }
+
     };
 
     handleDemo(e) {
         e.preventDefault();
         
             const demoUser = { email: "demoUser@demo.com", password: "password" }        
-       
+            let params = new URLSearchParams(this.props.location.search).get("id")
+
+
             let { email, password } = demoUser;
             let interval = 50;
             let login = () => {
-                this.props.login(this.state);
-                this.props.history.push("/")
+                // this.props.login(this.state);
+                // this.props.history.push("/")
+                if (!params) {
+                    this.props.login(this.state)
+                        .then(() => this.props.history.push('/'));
+                    } else {
+                    console.log("true")
+                        this.props.login(this.state)
+                        .then(() => this.props.history.push(`/sneakers/${params}`));
+                    }
             };
             if (this.state.email !== email) {
                 let inputEmail = setInterval(() => {
@@ -73,8 +91,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        console.log(this.props.location.pathname)
-        console.log(this.props.location.pathname.length)
+ 
         return(
             <div className="base_form">
                 <img className="side_image" src="https://image.goat.com/1000/attachments/product_template_pictures/images/011/867/273/original/312607_00.png.png" /> 
