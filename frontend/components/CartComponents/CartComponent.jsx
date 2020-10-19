@@ -77,12 +77,6 @@ class CartComponent extends React.Component {
                     </div>
                     <div className="checkout-button-links">
                         <Link to='/sneakers' className='checkout-buttons'> Continue Shopping</Link>
-                        {/* <a href="https://github.com/JJPhan" 
-                            className="checkout-buttons checkout-gh" 
-                            target="_blank">
-                            <span> Checkout </span>
-
-                        </a> */}
                         <a href="https://www.linkedin.com/in/jordan-phan-835919106/" 
                                 className="checkout-buttons checkout-linked" 
                                 target="_blank">
