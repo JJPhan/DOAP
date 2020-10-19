@@ -73,6 +73,8 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.location.pathname)
+        console.log(this.props.location.pathname.length)
         return(
             <div className="base_form">
                 <img className="side_image" src="https://image.goat.com/1000/attachments/product_template_pictures/images/011/867/273/original/312607_00.png.png" /> 
@@ -106,8 +108,8 @@ class SessionForm extends React.Component {
                         { this.props.errors.map( (error, idx) => <li className="session-errors" key={idx} >  {error}  </li>) } 
                     </form>
                     <div className="session-buttons">
-                        <input className="submit-button" form="form1" type="submit" value={`${this.props.formType === "login" ? "Log In" : "Sign Up"}`}></input>
-                        <button className="demo-button" onClick={this.handleDemo}> DEMO LOGIN </button>
+                        <input className="submit-button loginbuttons" form="form1" type="submit" value={`${this.props.formType === "login" ? "Log In" : "Sign Up"}`}></input>
+                        <button className="demo-button loginbuttons" onClick={this.handleDemo}> DEMO LOGIN </button>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,9 @@ class Navbar extends React.Component {
     }
 
     render(){
+
+        let hideCartIcon = this.props.currentUser ? "" : "hideCartIcon"
+        console.log(this.props.currentUser)
         return (
             <div className="navbar">
                 <div className="navbar-left">
@@ -32,6 +35,7 @@ class Navbar extends React.Component {
                         <li><Link className="discover" to='/'> Discover </Link> </li>
                         <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
                         <li><Link className="styles" to='/'> Styles </Link></li>
+                        <li><Link to='/cart' className={"fas fa-shopping-cart cartIcon " +hideCartIcon}></Link></li>
                         <li onClick={this.openSearch} >
                             <i className="fas fa-search nav-magnify" />
                         </li>
@@ -47,9 +51,15 @@ class Navbar extends React.Component {
     }
 }
 
+const mSTP = state => {
+    return {
+        currentUser: state.session.id
+    }
+}
+
 const mDTP = dispatch => ({
     openSide: (is_open, isSearch) => dispatch(open_sidebar_action(is_open, isSearch)),
     // closeSide: (is_closed) => dispatch(closed_sidebar_action(is_closed))
 })
 
-export default connect(null, mDTP)(Navbar)
+export default connect(mSTP, mDTP)(Navbar)
