@@ -1,12 +1,16 @@
-export const fetchCartItems = () => (
-    $.ajax({
-        method: "GET",
-        url: "/api/cart_items"
-    })
-)
+export const fetchCartItems = () => {
+    console.log("get test ")
+    return (
+        $.ajax({
+            method: "GET",
+            url: "/api/cart_items"
+        })
+    )
+}
 
 // camel vs snake case -> camel case did not work....?
 export const addCartItem = (cartItem) => {
+    console.log("add cart item")
     return (
         $.ajax({
             method: "POST",

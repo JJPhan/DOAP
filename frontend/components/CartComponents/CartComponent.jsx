@@ -5,18 +5,36 @@ import FeaturedRecContainer from '../FeaturedSneakers/FeaturedRecContainer'
 class CartComponent extends React.Component {
     constructor(props) {
         super(props)
-        
+        this.state = {
+            cartItems: []
+        }
     }
+
+    
 
     componentDidMount() {
         window.scrollTo(0,0)
-        this.props.requestCart()
+        this.props.requestCart().then(() => {
+            this.setState({ cartItems: this.props.cartItems})
+        })
+    }
+    
+
+    componentDidUpdate() {
+        let isDiff = false;
+        this.state.cartItems.forEach((item, i) => {
+            if (item.id !== this.props.cartItems[i].id) {
+                isDiff = true
+            }
+        })
+        if (isDiff) {
+            this.setState({cartItems: this.props.cartItems})
+        }
     }
 
     render() {
-
         let subTotal = 0
-        this.props.cartItems.map(items => subTotal += items.sneakerPrice)
+        this.state.cartItems.map(items => subTotal += items.sneakerPrice)
         let shippingCost = 0
         let totalPrice
         if (subTotal === 0) {
@@ -29,14 +47,16 @@ class CartComponent extends React.Component {
 
         let noItems = (subTotal === 0) ? "" : "def-cart"
 
-
+            // return (
+            //     <div> test test</div>
+            // )
 
         return(
             <div>
             <div className="sneaker-show-form cart-font">
                 <div className="left-cart-window">
 
-                <div className="left-cart-header">{this.props.cartItems.length} ITEMS </div>
+                {/* <div className="left-cart-header">{this.state.cartItems.length} ITEMS </div> */}
                         <div className="left-cart-header2"> SHOPPING CART </div>
                         <Link to='/sneakers'>
                             <div className={noItems + " noItemsDefault"}> 
@@ -50,11 +70,14 @@ class CartComponent extends React.Component {
                             </div>
                         </Link>
                     <ul className="cart-list">
-                        { this.props.cartItems.map(items => 
-                            // return (
+                        { this.state.cartItems.map((items, idx) => {
+
+                            return (
                             <div className="left-cart-container">
-                                
-                                <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
+                                {/* { items.sneakersPhoto && ( */}
+                                    <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img key={idx + items.sneakerPhoto} className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
+                                    {/* <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img className="sneaker-cart-img" src={"/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--64749cb0b40af4fd591d0c26ff796cb2ee8b75f2/861428061a.jpg"} /></Link>  */}
+                                {/* )} */}
                                 <div className="left-cart-right-details">
                                     <div>{items.sneakerName} </div>
                                     <br />
@@ -65,6 +88,7 @@ class CartComponent extends React.Component {
                                     <div><button className="remove-button" onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
                                 </div>
                             </div>
+                            )}
                         )}
                     </ul>
                 </div>
