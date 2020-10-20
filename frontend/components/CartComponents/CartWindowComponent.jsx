@@ -10,7 +10,7 @@ class CartWindow extends React.Component {
         this.state = {
             sneakerId: "0"
         }
-        this.test = this.test.bind(this)
+        // this.test = this.test.bind(this)
     }
 
     componentDidMount() {
