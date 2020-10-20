@@ -22,7 +22,7 @@ class CartWindow extends React.Component {
         if (this.props.currentUser) {
             secondButton = <Link to='/cart' className="cart-window-button"
                                 onClick={() => this.props.addCartItem({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
-                                > Buy</Link>
+                                > PURCHASE </Link>
         } else {
             secondButton = <Link className="cart-window-button" to={`/login?id=${this.state.sneakerId}`}>Login to Continue</Link>
         }

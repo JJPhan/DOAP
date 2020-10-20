@@ -16,21 +16,31 @@ import CartContainer from '../components/CartComponents/CartContainer'
 
 const App = () => {
     return (
-            <div className="main-content">
-                    <Navbar />
-                    <SidebarContainer />
-                    <Route exact path="/sneakers" component={SneakerIndexContainer} />
-                    <Route exact path="/" component={Homepage} />
-                    <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
-                    <Route exact path="/airjordans" component={JordanIndex} />
-                    <Route exact path="/nikedunks" component={NikeDunkIndex} />
-                    <Route exact path="/adidas" component={AdidasIndex} />
-                    <Route exact path="/login" component={LoginFormContainer} />
-                    <Route exact path="/signup" component={SignupFormContainer} />
-                    <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
-                    <Route exact path="/cart" component={CartContainer} />
-                   <div className="footer"></div>
-            </div>
+        <div>   
+                <Navbar />
+                <div className="main-content">
+                        <SidebarContainer />
+                        <Route exact path="/sneakers" component={SneakerIndexContainer} />
+                        <Route exact path="/" component={Homepage} />
+                        <Route exact path="/sneakers/:sneakerId" component={SneakerComponent} />
+                        <Route exact path="/airjordans" component={JordanIndex} />
+                        <Route exact path="/nikedunks" component={NikeDunkIndex} />
+                        <Route exact path="/adidas" component={AdidasIndex} />
+                        <Route exact path="/login" component={LoginFormContainer} />
+                        <Route exact path="/signup" component={SignupFormContainer} />
+                        <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
+                        <Route exact path="/cart" component={CartContainer} />
+
+                </div>
+                <div className="footer">
+                        <a href="https://github.com/JJPhan" target="_blank">
+                                <i className="fab fa-github foot-buttons" ></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/jordan-phan-835919106/" target="_blank">
+                                <i className="fab fa-linkedin foot-buttons"></i> LinkedIn                      
+                        </a>
+                </div>
+        </div>
     )
 }
 

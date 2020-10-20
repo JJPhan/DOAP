@@ -1,0 +1,59 @@
+.carolsel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: monospace;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+
+.carol-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.carol-header1 {
+    padding: 15px;
+    font-size: 25px;
+}
+
+.sneaker-carol {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* height:  */
+    overflow-x: auto;
+}
+
+.carol-item {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.carol-img {
+    height: 150px;
+    width: auto;
+}
+
+.carol-item:hover {
+    text-decoration: underline;
+}
+
+.see-all-button {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 15px;
+}
+
+.see-all-button:hover {
+    text-decoration: underline;
+}

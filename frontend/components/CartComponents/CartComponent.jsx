@@ -8,44 +8,60 @@ class CartComponent extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0,0)
         this.props.requestCart()
     }
 
     render() {
 
-        let totalPrice = 0
-        this.props.cartItems.map(items => totalPrice += items.sneakerPrice)
-        // console.log("car test")
-        // console.log(this.props.cartItems)
-        // console.log(this.props.cartItems.length)
-        
-        let noItems = (!this.props.cartItems.length === 0) ? "def-cart" : ""
+        let subTotal = 0
+        this.props.cartItems.map(items => subTotal += items.sneakerPrice)
+        let shippingCost = 0
+        let totalPrice
+        if (subTotal === 0) {
+            totalPrice = 0 
+            shippingCost = 0
+        } else {
+            shippingCost = 12
+            totalPrice = subTotal + shippingCost
+        }
+
+        let noItems = (subTotal === 0) ? "" : "def-cart"
+
+
 
         return(
-            <div className="shopping-cart">
+            <div className="sneaker-show-form cart-font">
                 <div className="left-cart-window">
-                <div className={noItems}> YOU HAVE NO ITEMS IN YOUR CART</div>
 
-                <div>{this.props.cartItems.length} ITEMS </div>
-                        <div> SHOPPING CART </div>
+                <div className="left-cart-header">{this.props.cartItems.length} ITEMS </div>
+                        <div className="left-cart-header2"> SHOPPING CART </div>
+                        <Link to='/sneakers'>
+                            <div className={noItems + " noItemsDefault"}> 
+                                YOU HAVE NO ITEMS IN YOUR CART
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+
+                                CLICK TO CONTINUE SHOPPING
+                            </div>
+                        </Link>
                     <ul className="cart-list">
                         { this.props.cartItems.map(items => 
                             // return (
-                            <div>
-                        
-                                <Link to={`/sneakers/${items.sneakerId}`}>  <img className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
-
-                                <br />
-                                shopping cart
-                                <br />
-                                {items.sneakerName} 
-                                <br />
-                                {items.sneakerSize} 
-                                <br />     
-                                ${items.sneakerPrice}
-                                <br />
-                                SKU {items.sneakerSku}
-                                <button onClick={() => this.props.removeCartItem(items.id)}> delete </button>
+                            <div className="left-cart-container">
+                                
+                                <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
+                                <div className="left-cart-right-details">
+                                    <div>{items.sneakerName} </div>
+                                    <br />
+                                    <div>SZ {items.sneakerSize} </div>
+                                    <div>${items.sneakerPrice}</div>
+                                    <div>SKU {items.sneakerSku}</div>
+                                    <br />
+                                    <div><button onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
+                                </div>
                             </div>
                         )}
                     </ul>
@@ -55,7 +71,7 @@ class CartComponent extends React.Component {
                         <div className="checkout-header">Order Summary</div>
                         <div className="checkout-info ci1"> 
                             <div> SHIPPING ADDRESS: </div>
-                            <div> 3960 LANDMARK ST, CULVER CITY </div>
+                            <div className="ship-add" > 3960 LANDMARK ST, CULVER CITY </div>
                         </div>
                         <div className="checkout-info"> 
                             <div> PAYMENT:</div>
@@ -64,15 +80,15 @@ class CartComponent extends React.Component {
                         </div>
                         <div className="checkout-info"> 
                             <div> SUBTOTAL: </div> 
-                            <div>${totalPrice} </div>
+                            <div>${subTotal} </div>
                         </div>
                         <div className="checkout-info"> 
                             <div>SHIPPING COST: </div> 
-                            <div> $12 </div>
+                            <div> ${shippingCost} </div>
                         </div>
                         <div className="checkout-info"> 
                             <div>TOTAL PRICE: </div>
-                            <div>${totalPrice + 12}</div>
+                            <div>${totalPrice}</div>
                         </div>
                     </div>
                     <div className="checkout-button-links">
