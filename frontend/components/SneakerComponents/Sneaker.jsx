@@ -21,6 +21,7 @@ class SneakerComponent extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0,0)
         this.props.requestSneaker(this.props.match.params.sneakerId),
         this.props.requestListings(this.props.match.params.sneakerId)
         // this.props.

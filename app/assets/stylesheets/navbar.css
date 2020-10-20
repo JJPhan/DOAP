@@ -1,5 +1,6 @@
 .main-content {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    font-family: monospace;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif;    */
     margin-right: 10%;
     margin-left: 10%;
     border-left: 1px solid black;
@@ -10,11 +11,16 @@
 }
 
 .splash-image {
-    /* position: relative; */
+    /* margin-top: 20%; */
     padding-top: 5%;
-    /* z-index: -10; */
-
-    /* width: 100%; */
+    object-fit: cover;
+    height: 700px ;
+    width: 100%;
+}
+.splash-image2 {
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
 }
 
 .splash-text {
@@ -41,26 +47,26 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     box-sizing: border-box;
-    align-items: flex-end;
+    height: 10%;
     position: fixed;
-    width: 80%;
+    width: 100%;
     background: white;
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: 2px solid black;
     top: 0px;
-    /* margin: 0px 80px 0px 80px; */
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    margin-right: 10%;
 }
 
 .navbar-left {
     font-size: 25px;
     padding-left: 50px;
+    margin-left: 10%
 }
 
 .navbar-right {
     padding-right: 2%;
+    margin-right: 10%;
 }
 
 .navbar .navbar-right .navbar-list{
@@ -109,4 +115,19 @@
 
 .cartIcon {
     color: gray;
+}
+
+.foot-buttons {
+    color: white;
+    font-size: 50px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.foot-buttons:hover {
+    color: darkgreen;
 }

@@ -2,6 +2,7 @@
     margin-top: 20%;
     margin-bottom: 10%;
     text-align: center;
+    font-size: 25px;
 }
 
 .cart-details {
@@ -13,7 +14,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     border-bottom: 1px solid lightgray;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -28,19 +29,10 @@
     height: 10%;
 }
 
-.cart-window-button {
-    height: 100%;
-    width: 50%;
-    border: 1px solid grey;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
 .cart-window-button:hover {
     background-color: black;
     color: white;
+    /* text-decoration: underline; */
 }
 
 .cart-window {
@@ -50,8 +42,10 @@
 }
 
 .sneaker-cart-img {
-    height: 20px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    padding-bottom: 50px;
+    margin: auto;
 }
 
 .shopping-cart {
@@ -66,24 +60,29 @@
 }
 
 .left-cart-window {
-    width: 50%;
-    border-right: 1px solid black;
-    height: auto
+    width: 60%;
+    border-right: 1px solid lightgray;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .right-cart-window {
-    width: 50%;
-    height: auto;
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: monospace;
 }
 
 .checkout-info {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
-    margin: 2%;
+    margin: 5%;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -95,11 +94,14 @@
 .ci1 {
     border-top: 1px solid lightgray;
     padding-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .checkout-header {
     text-align: center;
-    margin: 5% 0 5% 0;
+    margin: 15% 0 5% 0;
     font-size: 25px;
 }
 
@@ -108,7 +110,7 @@
 }
 
 .checkout-linked:hover:before {
-    content: "LinkedIn"
+    content: "DOAP-GITHUB"
 }
 
 .checkout-gh:hover span {
@@ -128,10 +130,13 @@
     /* display: flex; */
     width: 100%;
     height: 100%;
-    border: 1px solid grey;
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: monospace;
+    font-size: 15px;
 }
 
 .checkout-button-links {
@@ -139,8 +144,94 @@
     height: 10%;
     text-align: center;
     align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif!important; 
+    text-transform: uppercase; 
+    font-size: 15px;
 }
 
 .def-cart {
     display: none;
+}
+
+.left-cart-header {
+    text-align: center;
+    padding-top: 5%;
+    color: grey;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.left-cart-header2 {
+    text-align: center;
+    padding-top: 5%;
+    color: black;
+    font-size: 20px;
+    margin: 0 10% 0 10%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 2%;
+    font-family: monospace;
+} 
+
+.left-cart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2% 0 2% 5%;
+    border-bottom: 1px solid grey;
+    font-family: monospace;
+}
+
+.cart-image-container {
+    display: flex; 
+    width: 30%;
+}
+
+.left-cart-right-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 15px;
+    text-align: right;
+
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 10% 2% 10%;
+}
+
+.cart-font {
+    font-family: monospace;
+    margin-bottom: 5%;
+}
+
+.cart-window-button {
+    font-family: monospace;
+    font-size: 20px;
+    height: 100%;
+    width: 50%;
+    border: 1px solid grey;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.noItemsDefault {
+    margin: 10%;
+    font-family: monospace;
+    text-align: center;
+}
+
+.ship-add {
+    text-align: right;
+}
+
+.disclaimer {
+    /* padding-top: 20%; */
+    font-size: 12px;
+    text-align: center;
+    display: flex;
 }

@@ -13,7 +13,7 @@ class JordanIndex extends React.Component {
     // so we update the state then have access to to 'sneakers'
 
     componentDidMount() {
-        // debugger
+        window.scrollTo(0,0)
         this.props.requestSneakers()
     }
 
