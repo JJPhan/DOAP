@@ -62,7 +62,7 @@ class CartComponent extends React.Component {
                                     <div>${items.sneakerPrice}</div>
                                     <div>SKU {items.sneakerSku}</div>
                                     <br />
-                                    <div><button onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
+                                    <div><button className="remove-button" onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
                                 </div>
                             </div>
                         )}

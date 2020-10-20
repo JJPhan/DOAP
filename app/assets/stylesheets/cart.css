@@ -235,3 +235,7 @@
     text-align: center;
     display: flex;
 }
+
+.remove-button:hover {
+    text-decoration: underline;
+}
