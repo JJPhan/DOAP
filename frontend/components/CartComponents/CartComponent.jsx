@@ -8,9 +8,9 @@ class CartComponent extends React.Component {
         
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         window.scrollTo(0,0)
-        this.props.requestCart()
+        await this.props.requestCart()
     }
 
     render() {
