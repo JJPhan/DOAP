@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import FeaturedRecContainer from '../FeaturedSneakers/FeaturedRecContainer'
 
 class CartComponent extends React.Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class CartComponent extends React.Component {
 
 
         return(
+            <div>
             <div className="sneaker-show-form cart-font">
                 <div className="left-cart-window">
 
@@ -90,17 +92,20 @@ class CartComponent extends React.Component {
                             <div>TOTAL PRICE: </div>
                             <div>${totalPrice}</div>
                         </div>
+                        <div className="disclaimer"> DOAP is an exercise in developing a Full Stack web application using React, Redux, and Ruby on Rails, so while you can’t checkout the Cart you’ve assembled, you can “check out” the code behind the site.
+</div>
                     </div>
                     <div className="checkout-button-links">
                         <Link to='/sneakers' className='checkout-buttons'> Continue Shopping</Link>
-                        <a href="https://www.linkedin.com/in/jordan-phan-835919106/" 
+                        <a href="https://github.com/JJPhan/DOAP" 
                                 className="checkout-buttons checkout-linked" 
                                 target="_blank">
                             <span> Checkout</span>
                         </a>
                     </div>
                 </div>
-
+            </div>
+            <FeaturedRecContainer />
             </div>
         )
     }
