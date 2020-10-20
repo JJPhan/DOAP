@@ -48,7 +48,6 @@ class SidebarForm extends React.Component {
     
     sidebarType() {
         let openShow = this.props.is_open ? "sidebar-open" : ""
-        // search true or false 
 
         if (!this.props.isSearch) {
             return (
@@ -63,8 +62,6 @@ class SidebarForm extends React.Component {
                         <li><div><Link to='/airjordans' onClick={this.submit} > JORDAN BRAND </Link></div></li>
                         <li><div><Link to='/nikedunks' onClick={this.submit} > NIKE DUNKS </Link></div></li>
                         <li><div><Link to='/adidas' onClick={this.submit} > ADIDAS </Link></div></li>
-
-                        <li><div>Styles</div></li>
 
                         <li>
                             <a href="https://github.com/JJPhan" target="_blank">

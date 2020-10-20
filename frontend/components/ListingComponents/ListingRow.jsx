@@ -6,15 +6,6 @@ class ListingRow extends React.Component {
         super(props)
     }
 
-// on click 
-//      closes window
-//      generates new component
-//      pass listing as prop
-
-    // renderCartWindow() {
-    //     this.props.openCartWindow()
-    // }
-
     render() {
         return (
             <li className="listing-row listingWindow" onClick={() => this.props.openCartWindow(this.props.listing, this.props.listing.id)}>

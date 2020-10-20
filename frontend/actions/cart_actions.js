@@ -7,6 +7,7 @@ export const RECEIVE_CART = "RECEIVE_CART";
 export const DESTROY_CART_ITEM = "DESTORY_CART_ITEM";
 
 export const RECEIVE_CART_ERRORS = "RECEIVE_CART_ERRORS";
+export const CLEAR_CART_ERRORS = "CLEAR_CART_ERRORS"
 
 export const openCartWindow = (is_open) => {
     return ({
@@ -36,6 +37,10 @@ const receiveCartError = (errors) => {
         errors
     })
 }
+
+export const clearCartErrors = () => ({
+    type: CLEAR_CART_ERRORS
+})
  
 
 export const requestCart = () => dispatch => {
@@ -48,7 +53,10 @@ export const requestCart = () => dispatch => {
 export const addCartItem = (cartItem) => dispatch => {
     return ( CartAPIUtil.addCartItem(cartItem)
     .then(cartItem => { 
-        return (dispatch(createCartItem(cartItem)))}))
+        return (dispatch(createCartItem(cartItem)))})),
+        err => (
+            dispatch(receiveCartError(err.responseJSON))
+        )
 }
 
 export const removeCartItem = (id) => dispatch => {

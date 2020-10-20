@@ -34,7 +34,6 @@ class Navbar extends React.Component {
                     <ul className="navbar-list">
                         <li><Link className="discover" to='/'> Discover </Link> </li>
                         <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
-                        <li><Link className="styles" to='/'> Styles </Link></li>
                         <li><Link to='/cart' className={"fas fa-shopping-cart cartIcon " +hideCartIcon}></Link></li>
                         <li onClick={this.openSearch} >
                             <i className="fas fa-search nav-magnify" />
