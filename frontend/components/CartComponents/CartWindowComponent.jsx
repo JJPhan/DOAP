@@ -17,20 +17,20 @@ class CartWindow extends React.Component {
         this.setState({sneakerId: this.props.sneaker.id}) 
     }
 
-    test(testOb) {
-        this.props.addCartItem(testOb)
-        this.forceUpdate()
-    }
+    // test(testOb) {
+    //     this.props.addCartItem(testOb)
+    //     this.forceUpdate()
+    // }
 
     renderButtons() {
         let secondButton 
         if (this.props.currentUser) {
-            console.log("test purchase")
+            // console.log("test purchase")
             secondButton = <Link to='/cart' className="cart-window-button"
-                                onClick={() => this.test({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
+                                onClick={() => this.props.addCartItem({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
                                 > PURCHASE </Link>
         } else {
-            console.log("test login")
+            // console.log("test login")
             secondButton = <Link className="cart-window-button" to={`/login?id=${this.state.sneakerId}`}>Login to Continue</Link>
         }
 
