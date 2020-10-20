@@ -42,6 +42,10 @@
     font-size: 14px;
 }
 
+.sidebar_items > *:hover {
+    text-decoration: underline;
+}
+
 .sidebar-open {
     right: 0%!important;
     position: fixed;

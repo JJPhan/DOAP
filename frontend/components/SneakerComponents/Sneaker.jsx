@@ -3,7 +3,7 @@ import {requestSneaker} from '../../actions/sneaker_actions'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { requestListings, openListings, closeListings } from '../../actions/listing_actions'
-import { openCartWindow, addCartItem } from '../../actions/cart_actions'
+import { openCartWindow, addCartItem, clearCartErrors } from '../../actions/cart_actions'
 import ListingIndex from '../ListingComponents/listingIndex'
 import CartWindow from '../CartComponents/CartWindowComponent'
 
@@ -160,6 +160,7 @@ const mSTP = (state, ownProps) => {
         listWindowOpen: state.ui.listingWindow.isOpen,
         cartWindowOpen: state.ui.cartWindow.cartWindowOpen,
         currentUser: state.session.id,
+        // cartError: state.errors.cart
     })
 }
 
@@ -171,7 +172,8 @@ const mDTP = (dispatch) => {
         openListings: (is_open) => dispatch(openListings(is_open)),
         closeListings: (is_closed) => dispatch(closeListings(is_closed)),
         openCartWindow: (is_open) => dispatch(openCartWindow(is_open)),
-        addCartItem: (cartItem) => dispatch(addCartItem(cartItem))
+        addCartItem: (cartItem) => dispatch(addCartItem(cartItem)),
+        // clearCartErrors: 
     })
 
 }

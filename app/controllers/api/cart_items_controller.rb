@@ -6,7 +6,7 @@ class Api::CartItemsController < ApplicationController
         if @cart_item.save
             render :show
         else            
-            render json: ["Item is already in cart!"]
+            render json: ["This item is already in your cart!"]
         end
     end
 

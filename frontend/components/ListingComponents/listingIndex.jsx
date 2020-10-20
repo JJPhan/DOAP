@@ -17,8 +17,7 @@ class ListingIndex extends React.Component {
     render() {
         const { listings, closeListings, openCartWindow } = this.props;
         let hideDefault = this.props.cartWindowOpen ? "displayNone" : "" 
-        console.log("listing test")
-        console.log(this.props)
+
         return (
             
             <div className={"listings-container " + hideDefault}>
