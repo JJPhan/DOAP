@@ -27,7 +27,6 @@ class SessionForm extends React.Component {
         this.props.processForm(user)
             .then(() => this.props.history.push('/'));
         } else {
-        console.log("true")
             this.props.processForm(user)
             .then(() => this.props.history.push(`/sneakers/${params}`));
         }
@@ -50,7 +49,6 @@ class SessionForm extends React.Component {
                     this.props.login(this.state)
                         .then(() => this.props.history.push('/'));
                     } else {
-                    console.log("true")
                         this.props.login(this.state)
                         .then(() => this.props.history.push(`/sneakers/${params}`));
                     }

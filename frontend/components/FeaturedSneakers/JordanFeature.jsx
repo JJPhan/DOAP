@@ -13,7 +13,6 @@ class JordanFeature extends React.Component {
 
     render() {
         let { sneakers } = this.props
-        // console.log(this.props.sneakers)
         if (this.props.sneakers.length === 0) return null
 
         let jordan1s = 
@@ -28,7 +27,6 @@ class JordanFeature extends React.Component {
                     sneakers[20],
                     sneakers[14],
                 ]
-        // console.log(jordan1s)
         return (
             <div className="carolsel">
                 <div className="carol-header">

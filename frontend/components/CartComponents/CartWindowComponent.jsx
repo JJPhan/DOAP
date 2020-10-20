@@ -17,7 +17,6 @@ class CartWindow extends React.Component {
     }
 
     renderButtons() {
-        // console.log(this.props)
         let secondButton 
         if (this.props.currentUser) {
             secondButton = <Link to='/cart' className="cart-window-button"

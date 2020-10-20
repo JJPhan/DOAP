@@ -14,9 +14,6 @@ class SearchIndex extends React.Component {
     }
 
     render() {
-        // console.log(this.props.location.pathname.slice(8))
-        // console.log("test")
-        // console.log(this.props)
 
         let searchTerms = this.props.location.pathname.slice(8).split(" ")
         let {sneakers} = this.props

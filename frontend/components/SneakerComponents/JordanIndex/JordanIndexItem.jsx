@@ -5,8 +5,7 @@ import React from 'react';
 
 
 const JordanIndexItem = (props) => {
-    // const sneaker = props.sneaker
-    // debugger
+
     return (
 
         <Link to={`/sneakers/${props.jordan.id}`} className="snkr-idx-itm">

@@ -28,7 +28,6 @@ class Search extends React.Component {
 
     render() {
 
-        console.log(this.state)
         let searchTerms = this.state.searchQuery.split(" "); // "blue jordan" => [blue, jordan]
         let sneakers = this.props.sneakers;
         let filteredSneakers = []; 

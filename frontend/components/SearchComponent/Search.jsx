@@ -77,11 +77,7 @@ class Search extends React.Component {
 
         let openShow = this.props.is_open ? "sidebar-open" : ""
         let popHidden = (this.state.searchQuery.length > 0) ? "popHidden" : ""
-        // console.log("test1")
-        // console.log(this.state.searchQuery)
-        // console.log(this.state.searchQuery.length )
-        // console.log(this.state.searchQuery.length > 1)
-        // console.log(popHidden)
+
         return (
             
             <div>

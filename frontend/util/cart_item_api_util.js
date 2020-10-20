@@ -7,7 +7,6 @@ export const fetchCartItems = () => (
 
 // camel vs snake case -> camel case did not work....?
 export const addCartItem = (cartItem) => {
-    // debugger
     return (
         $.ajax({
             method: "POST",

@@ -11,7 +11,6 @@ class Api::SneakersController < ApplicationController
 
     def index
         @sneakers = Sneaker.all
-        # debugger
         render :index
     end
 

@@ -13,7 +13,6 @@ class AdidasFeature extends React.Component {
 
     render() {
         let { sneakers } = this.props
-        // console.log(this.props.sneakers)
         if (this.props.sneakers.length === 0) return null
 
         let adidas = sneakers.filter(shoe => {
@@ -21,7 +20,6 @@ class AdidasFeature extends React.Component {
                 shoe.brand === "Adidas"
             )
         })
-        console.log(adidas)
         return (
             <div className="carolsel">
                 <div className="carol-header">

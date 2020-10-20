@@ -11,7 +11,6 @@ class Navbar extends React.Component {
     }
 
     openSide() {
-        // console.log(this .props)
         // pass in two parameters
         this.props.openSide(true, false)
     }
@@ -23,7 +22,6 @@ class Navbar extends React.Component {
     render(){
 
         let hideCartIcon = this.props.currentUser ? "" : "hideCartIcon"
-        console.log(this.props.currentUser)
         return (
             <div className="navbar">
                 <div className="navbar-left">
