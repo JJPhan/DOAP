@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.login = something.login
     // window.logout = something.logout
     
-    window.fetchSneaker = sneakers.fetchSneaker
-    window.fetchSneakers = sneakers.fetchSneakers
-    window.fetchListings = listings.fetchListings
-    window.fetchListing = listings.fetchListing
-    window.fetchCartItems = cart.fetchCartItems
-    window.addCartItem = cart.addCartItem
-    window.removeCartItem = cart.removeCartItem
+    // window.fetchSneaker = sneakers.fetchSneaker
+    // window.fetchSneakers = sneakers.fetchSneakers
+    // window.fetchListings = listings.fetchListings
+    // window.fetchListing = listings.fetchListing
+    // window.fetchCartItems = cart.fetchCartItems
+    // window.addCartItem = cart.addCartItem
+    // window.removeCartItem = cart.removeCartItem
     // store 
     // window.signup = signup;
     // window.store = store;

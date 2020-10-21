@@ -21,7 +21,6 @@ class CartComponent extends React.Component {
         })
         let params = new URLSearchParams(this.props.location.search).get("refresh")
         if (params === "true") {
-            console.log(params)
             this.props.history.replace({
                 pathname:"/cart",
                 search:""
