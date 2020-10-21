@@ -25,7 +25,7 @@ class RecFeatures extends React.Component {
             <div className="carolsel2">
                 <div className="carol-header">
                     <h1 className="carol-header1"> YOU MAY ALSO LIKE </h1>
-                    <Link to="/airjordans" className="see-all-button"> See All </Link>
+                    <Link to="/sneakers" className="see-all-button"> See All </Link>
                 </div>
                 <div className="sneaker-carol">
                     {recommendedSneakers.map(shoe => {
