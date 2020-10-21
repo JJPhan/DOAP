@@ -25,7 +25,7 @@ class CartWindow extends React.Component {
     renderButtons() {
         let secondButton 
         if (this.props.currentUser) {
-            secondButton = <Link to='/cart' className="cart-window-button"
+            secondButton = <Link to='/cart?refresh=true' className="cart-window-button"
                                 // onClick={() => this.props.addCartItem({user_id: this.props.currentUser, listing_id: this.props.listingId} )}
                                 onClick={() => this.addCartItem()}
                                 > PURCHASE </Link>

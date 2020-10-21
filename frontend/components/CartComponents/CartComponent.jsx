@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FeaturedRecContainer from '../FeaturedSneakers/FeaturedRecContainer'
+import {withRouter} from 'react-router-dom'
 
 class CartComponent extends React.Component {
     constructor(props) {
@@ -18,6 +19,15 @@ class CartComponent extends React.Component {
         this.props.requestCart().then(() => {
             this.setState({ cartItems: this.props.cartItems})
         })
+        let params = new URLSearchParams(this.props.location.search).get("refresh")
+        if (params === "true") {
+            console.log(params)
+            this.props.history.replace({
+                pathname:"/cart",
+                search:""
+            })
+            window.location.reload()
+        }
     }
     
 
@@ -148,4 +158,4 @@ class CartComponent extends React.Component {
 
 }
 
-export default CartComponent 
+export default withRouter(CartComponent)

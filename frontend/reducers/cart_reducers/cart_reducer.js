@@ -6,13 +6,13 @@ import {
 const CartReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state)
+
     switch (action.type) {
         case RECEIVE_CART:
             console.log("test a")
             console.log(action.cart)
             return action.cart;
         case RECEIVE_CART_ITEM:
-            console.log("test b")
             console.log(action.cartItem)
             // return nextState = { ...nextState, ...action.cartItem } 
             // return Object.assign{ {}, state, action.cartItem}

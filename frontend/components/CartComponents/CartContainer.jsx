@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { requestCart, addCartItem, removeCartItem } from '../../actions/cart_actions'
 import CartComponent from './CartComponent'
+import withRouter from 'react-router-dom'
 
 const mSTP = state => ({
     cartItems: Object.values(state.entities.cart)
