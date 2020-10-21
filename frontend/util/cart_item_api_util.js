@@ -1,5 +1,4 @@
 export const fetchCartItems = () => {
-    console.log("get test ")
     return (
         $.ajax({
             method: "GET",
@@ -10,7 +9,6 @@ export const fetchCartItems = () => {
 
 // camel vs snake case -> camel case did not work....?
 export const addCartItem = (cartItem) => {
-    console.log("add cart item")
     return (
         $.ajax({
             method: "POST",

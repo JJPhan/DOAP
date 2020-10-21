@@ -51,7 +51,6 @@ export const requestCart = () => dispatch => {
 }
 
 export const addCartItem = (cartItem) => dispatch => {
-    console.log("add cart action")
     return ( CartAPIUtil.addCartItem(cartItem)
     .then(cartItem => { 
         return (dispatch(createCartItem(cartItem)))}))

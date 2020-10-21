@@ -24,7 +24,6 @@ class CartComponent extends React.Component {
     componentDidUpdate() {
 
         let isDiff = false;
-        // this.props.requestCart()
         this.state.cartItems.forEach((item, i) => {
             // if (i <= this.props.cartItems.length) {
                 if (!this.props.cartItems[i]) {
@@ -40,7 +39,6 @@ class CartComponent extends React.Component {
         if (isDiff) {
             this.setState({cartItems: this.props.cartItems})
             this.props.requestCart();
-            // this.props.requestCart()
         }
         
 
@@ -53,6 +51,7 @@ class CartComponent extends React.Component {
     }
 
     render() {
+
         let subTotal = 0
         this.state.cartItems.map(items => subTotal += items.sneakerPrice)
         let shippingCost = 0
@@ -66,15 +65,12 @@ class CartComponent extends React.Component {
         }
 
         let noItems = (subTotal === 0) ? "" : "def-cart"
-
-        // console.log("test")
-        // console.log(this.props.cartItems)
+        
         return(
             <div>
             <div className="sneaker-show-form cart-font">
                 <div className="left-cart-window">
 
-                {/* <div className="left-cart-header">{this.state.cartItems.length} ITEMS </div> */}
                         <div className="left-cart-header2"> SHOPPING CART </div>
                         <Link to='/sneakers'>
                             <div className={noItems + " noItemsDefault"}> 
@@ -94,16 +90,13 @@ class CartComponent extends React.Component {
                                 <div className="left-cart-container">
                                         <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img key={idx + items.sneakerPhoto} className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
                                     <div className="left-cart-right-details">
-                                        <div> id: {items.id}</div>
                                         <div>{items.sneakerName} </div>
                                         <br />
                                         <div>SZ {items.sneakerSize} </div>
                                         <div>${items.sneakerPrice}</div>
                                         <div>SKU {items.sneakerSku}</div>
-                                        <br />
                                       
                                         <div><button className="remove-button" onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
-                                        {/* <div><button className="remove-button" onClick={() => this.handleDelete(items.id)}> REMOVE </button></div> */}
                                     </div>
                                 </div>
                             )
