@@ -8,6 +8,7 @@ class CartComponent extends React.Component {
         this.state = {
             cartItems: []
         }
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     
@@ -21,15 +22,34 @@ class CartComponent extends React.Component {
     
 
     componentDidUpdate() {
+
         let isDiff = false;
+        // this.props.requestCart()
         this.state.cartItems.forEach((item, i) => {
-            if (item.id !== this.props.cartItems[i].id) {
-                isDiff = true
-            }
+            // if (i <= this.props.cartItems.length) {
+                if (!this.props.cartItems[i]) {
+                    isDiff = true
+                    return 
+
+                }
+                if (item.id !== this.props.cartItems[i].id) {
+                    isDiff = true
+                }
+        //  }
         })
         if (isDiff) {
             this.setState({cartItems: this.props.cartItems})
+            this.props.requestCart();
+            // this.props.requestCart()
         }
+        
+
+    }
+    
+
+
+    handleDelete(id) {
+        this.props.removeCartItem(id)
     }
 
     render() {
@@ -47,10 +67,8 @@ class CartComponent extends React.Component {
 
         let noItems = (subTotal === 0) ? "" : "def-cart"
 
-            // return (
-            //     <div> test test</div>
-            // )
-
+        // console.log("test")
+        // console.log(this.props.cartItems)
         return(
             <div>
             <div className="sneaker-show-form cart-font">
@@ -73,22 +91,23 @@ class CartComponent extends React.Component {
                         { this.state.cartItems.map((items, idx) => {
 
                             return (
-                            <div className="left-cart-container">
-                                {/* { items.sneakersPhoto && ( */}
-                                    <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img key={idx + items.sneakerPhoto} className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
-                                    {/* <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img className="sneaker-cart-img" src={"/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--64749cb0b40af4fd591d0c26ff796cb2ee8b75f2/861428061a.jpg"} /></Link>  */}
-                                {/* )} */}
-                                <div className="left-cart-right-details">
-                                    <div>{items.sneakerName} </div>
-                                    <br />
-                                    <div>SZ {items.sneakerSize} </div>
-                                    <div>${items.sneakerPrice}</div>
-                                    <div>SKU {items.sneakerSku}</div>
-                                    <br />
-                                    <div><button className="remove-button" onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
+                                <div className="left-cart-container">
+                                        <Link to={`/sneakers/${items.sneakerId}`} className="cart-image-container">   <img key={idx + items.sneakerPhoto} className="sneaker-cart-img" src={`${items.sneakerPhoto}`} /></Link> 
+                                    <div className="left-cart-right-details">
+                                        <div> id: {items.id}</div>
+                                        <div>{items.sneakerName} </div>
+                                        <br />
+                                        <div>SZ {items.sneakerSize} </div>
+                                        <div>${items.sneakerPrice}</div>
+                                        <div>SKU {items.sneakerSku}</div>
+                                        <br />
+                                      
+                                        <div><button className="remove-button" onClick={() => this.props.removeCartItem(items.id)}> REMOVE </button></div>
+                                        {/* <div><button className="remove-button" onClick={() => this.handleDelete(items.id)}> REMOVE </button></div> */}
+                                    </div>
                                 </div>
-                            </div>
-                            )}
+                            )
+                        }
                         )}
                     </ul>
                 </div>
