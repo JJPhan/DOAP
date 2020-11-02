@@ -69,7 +69,7 @@ class SidebarForm extends React.Component {
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/jordan-phan-835919106/" target="_blank">
+                            <a href="https://www.linkedin.com/in/jordanjphan/" target="_blank">
                                 <i className="fab fa-linkedin"></i> LinkedIn                      
                             </a>
                         </li>
