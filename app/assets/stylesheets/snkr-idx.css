@@ -82,6 +82,7 @@
     height: calc(100vh - 180px);
     max-height: 800px;
     min-height: 500px;
+    border-radius: 5px
 }
 
 .sneaker-show-left {

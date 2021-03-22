@@ -10,6 +10,7 @@
     max-height: 800px;
     min-height: 500px;
     margin-bottom: 50px;
+    border-radius: 5px;
 }
 
 .footer {
