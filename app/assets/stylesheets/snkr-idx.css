@@ -3,14 +3,17 @@
 .index-header {
     font-size: 32px;
     font-family: monospace;
-    padding: 150px 0 75px 0 ;
+    padding: 50px 0 50px 0 ;
     text-align: center;
     
 }
 
 
 .snkr-idx {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 90px;
+    /* display: flex;
     justify-content: center;
     flex-flow: wrap row;
     padding-right: 40px;
@@ -18,27 +21,31 @@
     padding-bottom: 80px;
     height: 100%;
     margin: auto;
-    width: 80%;
+    width: 80%; */
 
 }
 
 .snkr-idx-itm {
-    display: flex;
-    /* margin-right: 10px; */
-    /* flex-flow: wrap row; */
+    /* 
     height: 350px;
     width: 300px;
-    border: 1px solid lightgray;
+    */
+    display: flex;
     justify-content: center;
-    align-items: center;
-    /* margin: auto; */
+    align-items: center; 
+    border: 1px solid rgb(222, 222, 222);
+    padding: 75px 22px;
 }
 
+.snkr-idx-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .snkr-img {
     display: flex;
     align-items: center;
-    padding-left: 55px;
-    /* height: 25%; */
     width: 65%;
 }
 
@@ -66,11 +73,15 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid lightgray;
-    margin: 160px 5% 5% 5%;    
+    border: 1px solid rgb(222, 222, 222);
+    margin: 0 90px;
     box-sizing: border-box;
     font-family: monospace;
-    height: 600px;
+    /* height: 600px; */
+    /* flex-direction: row; */
+    height: calc(100vh - 180px);
+    max-height: 800px;
+    min-height: 500px;
 }
 
 .sneaker-show-left {
@@ -78,7 +89,7 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    border-right: 1px solid black;
+    border-right: 1px solid rgb(222, 222, 222);
     height: 100%;
 }
 
@@ -91,7 +102,7 @@
 .sneaker-show-img {
     height: auto;
     width: 80%;
-    padding-bottom: 50px;
+    padding: 200px 0;
     margin: auto;
 }
 
@@ -116,7 +127,7 @@
 
 .sneaker-img-container {
     overflow: auto;
-    height: 400px;
+    height: 80%;
 }
 
 
@@ -222,13 +233,15 @@
 
 .show-listing-button {
     display: flex;
+    justify-content: center;
     bottom: 0;
-    border-top: 1px solid lightgray;
-    border-top: 2px soliday lightgray;
+    border-top: 1px solid rgb(222, 222, 222);
     height: 10%;
     font-size: 20px;
 
 }
+
+
 
 .show-listing-button:hover {
     color: white;
@@ -331,7 +344,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 200px;
+    padding-top: 50px;
     font-family: monospace;    
     text-align: center;
     margin: 0 20% 0 20%;

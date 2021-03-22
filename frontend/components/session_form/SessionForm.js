@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
@@ -10,8 +10,6 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDemo = this.handleDemo.bind(this)
-        // this.submit = this.submit.bind(this)
-
     }
 
     componentDidMount(){
@@ -125,7 +123,7 @@ class SessionForm extends React.Component {
                     </form>
                     <div className="session-buttons">
                         <input className="submit-button loginbuttons" form="form1" type="submit" value={`${this.props.formType === "login" ? "Log In" : "Sign Up"}`}></input>
-                        <button className="demo-button loginbuttons" onClick={this.handleDemo}> DEMO LOGIN </button>
+                        <button className="demo-button loginbuttons" onClick={this.handleDemo}> Demo Login </button>
                     </div>
                 </div>
             </div>

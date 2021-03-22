@@ -40,10 +40,11 @@
     border-bottom: lightgray solid 1px;
     padding: 20px;
     font-size: 14px;
+    text-decoration: underline solid transparent;
 }
 
 .sidebar_items > *:hover {
-    text-decoration: underline;
+    text-decoration: underline solid black;
 }
 
 .sidebar-open {
@@ -53,9 +54,9 @@
 
 .signInLinks  {
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between; 
     width: 100%;
+    text-decoration: underline solid transparent;
 }
 
 .loginBut {
@@ -63,9 +64,6 @@
     width: 50%;
     text-align: center;
 }
-/* .signInLinks > * {
-    display: flex;
-} */
 
 .overlay {
     position: fixed;
