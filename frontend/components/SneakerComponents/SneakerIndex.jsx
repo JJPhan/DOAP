@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import SneakerIndexItem from "./SneakerIndexItem";
 
 const SneakerIndex = ({ sneakers, requestSneakers }) => {
+    
   useEffect(() => {
+    window.scrollTo(0,0)
     requestSneakers();
   }, []);
 

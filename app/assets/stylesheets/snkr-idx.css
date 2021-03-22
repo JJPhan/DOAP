@@ -37,11 +37,15 @@
     padding: 75px 22px;
 }
 
+.snkr-idx-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .snkr-img {
     display: flex;
     align-items: center;
-    padding-left: 55px;
-    /* height: 25%; */
     width: 65%;
 }
 
@@ -98,7 +102,7 @@
 .sneaker-show-img {
     height: auto;
     width: 80%;
-    padding: 250px 0;
+    padding: 200px 0;
     margin: auto;
 }
 
@@ -340,7 +344,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 200px;
+    padding-top: 50px;
     font-family: monospace;    
     text-align: center;
     margin: 0 20% 0 20%;

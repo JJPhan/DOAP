@@ -3,11 +3,13 @@
     justify-content: space-around;
     align-items: center;
     border: 1px solid rgb(222, 222, 222);
-    margin: 0 80px 80px 80px;
-    border-radius: 5px;
+    margin: 0 90px;
     box-sizing: border-box;
-    font-family: Overpass, sans-serif;
-    height: 800px;
+    font-family: monospace;
+    height: calc(100vh - 180px);
+    max-height: 800px;
+    min-height: 500px;
+    margin-bottom: 50px;
 }
 
 .footer {
