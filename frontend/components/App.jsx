@@ -18,7 +18,7 @@ const App = () => {
     return (
         <div>   
                 <Navbar />
-                <div className="main-content">
+                {/* <div className="main-content"> */}
                         <SidebarContainer />
                         <Route exact path="/sneakers" component={SneakerIndexContainer} />
                         <Route exact path="/" component={Homepage} />
@@ -31,7 +31,7 @@ const App = () => {
                         <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
                         <Route exact path="/cart" component={CartContainer} />
 
-                </div>
+                {/* </div> */}
                 <div className="footer">
                         <a href="https://github.com/JJPhan" target="_blank">
                                 <i className="fab fa-github foot-buttons" ></i> GitHub

@@ -1,51 +1,45 @@
-import React from 'react'
+import React, {useEffect} from 'react';
 import {open_sidebar_action} from '../actions/navbar_actions'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
 
-class Navbar extends React.Component {
-    constructor(props) {
-        super(props)
-        this.openSide = this.openSide.bind(this)
-        this.openSearch = this.openSearch.bind(this)
+const Navbar = ({currentUser, openSide}) => {
+
+    const openSearch = () => {
+        openSide(true, true)
     }
 
-    openSide() {
-        // pass in two parameters
-        this.props.openSide(true, false)
-    }
+    let hideCartIcon = currentUser ? "" : "cart-hidden"
 
-    openSearch() {
-        this.props.openSide(true, true)
-    }
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+                document.querySelector(".nav-container").className = "nav-container scroll";
+              } else {
+                document.querySelector(".nav-container").className = "nav-container";
+              }
+        })
+    }, [])
 
-    render(){
-
-        let hideCartIcon = this.props.currentUser ? "" : "hideCartIcon"
-        return (
+    return (
+        <div className="nav-container">
             <div className="navbar">
-                <div className="navbar-left">
-                    <Link className="title_logo" to='/'> DOAP</Link>
-                </div>
-
-                <div className="navbar-right">
-                    <ul className="navbar-list">
-                        <li><Link className="discover" to='/'> Discover </Link> </li>
-                        <li><Link className="shopAll" to='/sneakers'> Shop All </Link></li>
-                        <li><Link to='/cart' className={"fas fa-shopping-cart cartIcon " +hideCartIcon}></Link></li>
-                        <li onClick={this.openSearch} >
-                            <i className="fas fa-search nav-magnify" />
-                        </li>
-                        <li>  
-                            <div className="hamBar">
-                                <i className="fas fa-bars" onClick={this.openSide} ></i>
-                            </div>  
-                        </li>
-                    </ul>
-                </div>
+                <Link className="title-logo" to='/'> DOAP</Link>
+               <ul className="navbar-list">
+                    <li><Link to='/'> Discover </Link> </li>
+                    <li><Link to='/sneakers'> Shop All </Link></li>
+                        <Link to='/cart'>
+                    <li className={"fas fa-shopping-cart cartIcon " +hideCartIcon}></li></Link>
+                    <li onClick={openSearch} >
+                        <i className="fas fa-search nav-magnify" />
+                    </li>
+                    <li className="hamBar">
+                        <i className="fas fa-bars" onClick={openSide} ></i>
+                    </li>
+                </ul>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 const mSTP = state => {
@@ -54,9 +48,11 @@ const mSTP = state => {
     }
 }
 
-const mDTP = dispatch => ({
+const mDTP = dispatch => {
+    return {
     openSide: (is_open, isSearch) => dispatch(open_sidebar_action(is_open, isSearch)),
     // closeSide: (is_closed) => dispatch(closed_sidebar_action(is_closed))
-})
+    }
+}
 
 export default connect(mSTP, mDTP)(Navbar)

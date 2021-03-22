@@ -2,9 +2,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: lightgray 2px solid;
-    margin: 80px;
-    /* flex-direction: column; */
+    border: 1px solid rgb(222, 222, 222);
+    margin: 0 80px 80px 80px;
+    border-radius: 5px;
     box-sizing: border-box;
     font-family: Overpass, sans-serif;
     height: 800px;
@@ -102,11 +102,8 @@
 
 .session-buttons {
     display: flex;
-    /* align-items: flex-end; */
-    /* margin-top: 401px; */
     bottom: 0;
-    border: 1px solid lightgray;
-    border-top: 2px soliday lightgray;
+    border-top: 1px solid rgb(222, 222, 222);
     height: 10%;
 }
 
@@ -146,15 +143,6 @@ sign-inbox right:
 position
 */
 
-.show-listing-button{
-    display: flex;
-    justify-content: center;
-    /* margin-top: 401px; */
-    bottom: 0;
-    border: 1px solid lightgray;
-    border-top: 2px soliday lightgray;
-    height: 10%;
-}
 
 .session-errors {
     width: 100%;
