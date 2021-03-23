@@ -239,3 +239,13 @@
 .remove-button:hover {
     text-decoration: underline;
 }
+
+.see-all-button2 {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .left-cart-window {
+        width: 100%;
+    }
+}

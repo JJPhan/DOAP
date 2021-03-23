@@ -29,6 +29,7 @@ class Search extends React.Component {
 
     redirectSearch(e) {
         e.preventDefault();
+        console.log('test')
         setTimeout((() => { 
         if (this.state.searchQuery === "") {
             this.props.history.push("/sneakers")
@@ -39,15 +40,6 @@ class Search extends React.Component {
         this.props.closeSide(false)
 
     }
-
-
-
-    // filter method 
-    // iterate through the search query
-    // if the each word in the search query is found in at least one of the sneaker's attribute
-        // split and iterate through search query
-        // 
-    // add the sneaker into the search filter
 
     render() {
 
@@ -82,7 +74,7 @@ class Search extends React.Component {
             
             <div>
                 {this.props.is_open && <div className="overlay" onClick={this.submit } />}
-                <div className={"sidebar "+openShow} >                   
+                <div className={"sidebar "+openShow} id="mobile-search" >                   
                  <form className="sidebar-search"
                     onSubmit={this.redirectSearch}> 
                         <i className="fas fa-search magnify" />
@@ -91,7 +83,8 @@ class Search extends React.Component {
                         // placeholder={"Enter Name / Brand / Model / Colorway / Description"}
                         placeholder="Type To Search"
                         onChange={this.update('searchQuery')}
-                    />
+                        />
+                        <button type="button" className="search-cancel" onClick={() => this.props.closeSide(false)}> Cancel </button>
                 </form>
                 <div className={"popular-search " + popHidden} >
                     <h1 className="pop-header"> Popular Searches </h1>

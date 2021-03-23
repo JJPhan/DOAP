@@ -26,8 +26,8 @@ const Navbar = ({currentUser, openSide}) => {
             <div className="navbar">
                 <Link className="title-logo" to='/'> DOAP</Link>
                <ul className="navbar-list">
-                    <li><Link to='/'> Discover </Link> </li>
-                    <li><Link to='/sneakers'> Shop All </Link></li>
+                    <li className="navbar-list-item"><Link to='/'> Discover </Link> </li>
+                    <li className="navbar-list-item" ><Link to='/sneakers'> Shop All </Link></li>
                         <Link to='/cart'>
                     <li className={"fas fa-shopping-cart cartIcon " +hideCartIcon}></li></Link>
                     <li onClick={openSearch} >

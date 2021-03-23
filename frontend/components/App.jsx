@@ -12,13 +12,11 @@ import NikeDunkIndex from '../components/SneakerComponents/NikeIndex/NikeDunkInd
 import AdidasIndex from '../components/SneakerComponents/AdidasIndex/AdidasIndex'
 import SearchIndexContainer from '../components/SearchComponent/SearchIndexContainer'
 import CartContainer from '../components/CartComponents/CartContainer'
-// import AuthRoute from '../util/route_util'
 
 const App = () => {
     return (
-        <div>   
+        <div className="app-container">   
                 <Navbar />
-                {/* <div className="main-content"> */}
                         <SidebarContainer />
                         <Route exact path="/sneakers" component={SneakerIndexContainer} />
                         <Route exact path="/" component={Homepage} />
@@ -30,8 +28,6 @@ const App = () => {
                         <Route exact path="/signup" component={SignupFormContainer} />
                         <Route exact path="/search/:searchinput" component={SearchIndexContainer} />
                         <Route exact path="/cart" component={CartContainer} />
-
-                {/* </div> */}
                 <div className="footer">
                         <a href="https://github.com/JJPhan" target="_blank">
                                 <i className="fab fa-github foot-buttons" ></i> GitHub

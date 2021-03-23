@@ -25,6 +25,8 @@ class AdidasFeature extends React.Component {
                 <div className="carol-header">
                     <h1 className="carol-header1"> Stripes Collection </h1>
                     <Link to="/adidas" className="see-all-button"> See All </Link>
+                    <Link to="/adidas" className="see-all-button2"> <i class="fas fa-arrow-right"></i></Link>
+
                 </div>
                 <div className="sneaker-carol">
                     {adidas.map(shoe => {

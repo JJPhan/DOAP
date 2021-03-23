@@ -32,6 +32,8 @@ class JordanFeature extends React.Component {
                 <div className="carol-header">
                     <h1 className="carol-header1"> Jordan Brand Collection </h1>
                     <Link to="/airjordans" className="see-all-button"> See All </Link>
+                    <Link to="/airjordans" className="see-all-button2"> <i class="fas fa-arrow-right"></i></Link>
+
                 </div>
                 <div className="sneaker-carol">
                     {jordan1s.map(shoe => {

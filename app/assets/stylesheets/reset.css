@@ -20,11 +20,13 @@ span, article, footer, time, small {
   background: transparent;
   font-family: monospace;
   font-family: Verdana, Geneva, Tahoma, sans-serif;   
+  
 }
 
 body {
   overflow-x: hidden;
 }
+
 ul {
   list-style: none;
 }
@@ -62,3 +64,10 @@ input[type="submit"] {
   display: block;
   clear: both;
 }
+
+/* @media (max-width: 640px) {
+  .app-container {
+    width: 100vw;
+    overflow-x: hidden;
+  } 
+*/

@@ -154,3 +154,15 @@ position
     color: red;
 }
 
+@media (max-width: 640px) {
+    .base_form {
+        width: 100%;
+        border: none;
+        border-top: 1px solid rgb(222, 222, 222);
+        margin: 0;
+    }
+
+    .side_image {
+        display: none;
+    }
+}
