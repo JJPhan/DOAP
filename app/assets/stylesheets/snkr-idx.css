@@ -48,11 +48,12 @@
 .snkr-idx-prop > * {
     padding: 5px;
 }
-@cat
+
+/* @cat
 .snkr-idx-itm:hover {
     border: 1px solid black;
     cursor: pointer;
-}
+} */
 
 
 .sneaker-show-form {
