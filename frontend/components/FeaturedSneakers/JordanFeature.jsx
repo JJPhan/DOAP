@@ -39,8 +39,8 @@ class JordanFeature extends React.Component {
                     {jordan1s.map(shoe => {
                         return (
                             <div className="carol-item">
-                                <Link to={`/sneakers/${shoe.id}`}> <img className="carol-img" src={`${shoe.photoUrls[0]}`} /> </Link>
-                                <div> {shoe.name} </div>
+                                <Link to={`/sneakers/${shoe.id}`}> <img className="carol-img" src={`${shoe.photoUrls[0]}`} /> 
+                                <div> {shoe.name} </div></Link>
                             </div>
                             )
                         })}

@@ -247,5 +247,39 @@
 @media (max-width: 640px) {
     .left-cart-window {
         width: 100%;
+        height: 400px;
     }
+
+    .right-cart-window {
+        width: 100%;
+    }
+    
+    .checkout-header {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .checkout-info {
+        font-size: 10px;
+    }
+
+    .left-cart-right-details {
+        font-size: 15px;
+    }
+
+    .checkout-button-links {
+        margin-top: 5px;
+        height: 50px;
+    }
+
+    .checkout-buttons {
+        background: black;
+        color: white;
+    }
+
+    .product-details {
+        font-size: 15px;
+    }
+
+
 }

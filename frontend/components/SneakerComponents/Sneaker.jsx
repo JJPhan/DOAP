@@ -104,14 +104,14 @@ class SneakerComponent extends React.Component {
         // let showListings = this.props.listings
         return (
             <div>
-                <div className="sneaker-show-form">
+                <div className="sneaker-show-form mobile-sneaker-show-form">
                     <div className="sneaker-show-left">
                         <div className="sneaker-img-container">
                             <img className="sneaker-show-img" src={`${sneaker.photoUrls[0]}`} />
                             <img className="sneaker-show-img" src={`${sneaker.photoUrls[1]}`} />
                         </div>
 
-                        <div> {`${sneaker.brand} / ${sneaker.silhouette} / ${sneaker.name}`} </div>
+                        <div className="sneaker-slash-description"> {`${sneaker.brand} / ${sneaker.silhouette} / ${sneaker.name}`} </div>
                     </div>
 
                     <div className="sneaker-show-right"> {this.renderListings() }</div>

@@ -49,11 +49,10 @@
     padding: 5px;
 }
 
-/* @cat
 .snkr-idx-itm:hover {
     border: 1px solid black;
     cursor: pointer;
-} */
+} 
 
 
 .sneaker-show-form {
@@ -64,9 +63,9 @@
     margin: 0 90px;
     box-sizing: border-box;
     font-family: monospace;
-    height: calc(100vh - 180px);
+    /* height: calc(100vh - 180px);
     max-height: 800px;
-    min-height: 500px;
+    min-height: 500px; */
     border-radius: 5px
 }
 
@@ -133,7 +132,6 @@
 .close-list-window {
     width: 100%;
     bottom: 0;
-    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -398,9 +396,77 @@
     }
 }
 
+@media (min-width: 641px) {
+
+    .sneaker-show-form {
+        height: calc(100vh - 180px);
+        max-height: 800px;
+        min-height: 500px;
+    }
+}
+
 @media (max-width: 640px) {
     .sneaker-show-form {
         margin: 0;
         flex-direction: column;
+    }
+
+    .sneaker-show-left {
+        border: none;
+        width: 100%;
+    }
+
+    .sneaker-img-container {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .sneaker-show-img {
+        width: 100%;
+        padding: 100px 0;
+    }
+
+    .sneaker-show-left > :last-child {
+        padding-top: 10px;
+    }
+
+    .sneaker-show-right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .default-sneaker-show-right > :first-child {
+        margin: 0;
+        padding-top: 0;
+    }
+
+    .mobile-sneaker-show-form {
+        max-height: none;
+        height: none;
+    }
+
+    .sneaker-slash-description {
+        display: none;
+    }
+
+    .show-listing-button {
+        background: black;
+        color: white;
+        height: 50px;
+    }
+
+    .close-list-window {
+        background: black;
+        color: white;
+        height: 50px;
+    }
+
+    .cart-window-button-container {
+        width: 100%;
+        height: 50px;
+        background: black;
+        color: white;
     }
 }
